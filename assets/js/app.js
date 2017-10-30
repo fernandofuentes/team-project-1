@@ -11,14 +11,23 @@ function displayTriviaQuestion() {
   }).done(function(response) {
 
     // Creating a div to hold the question
-    //  var questionDiv = $("<div class='question'>");
+    var questionDiv = $("<div class='question'>");
 
-    // Storing the rating data
-    var response = response.results;
-    console.log(response);
+    // Storing the results data
+    var results = response.results;
+    //console.log(results);
 
-    var question = response.results;
+    // Storing the question data
+    var question = response.results["0"].question;
     // console.log(question);
+
+    for (i = 0; i < results.length; i++) {
+      console.log(response.results[i].question);
+
+
+    }
+
+
 
   });
 
