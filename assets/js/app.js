@@ -25,14 +25,21 @@ function renderQuestion() {
     for (i = 0; i < results.length; i++) {
       // console.log(response.results[i].question);
       // Next for lines creates the Questions Divs
-      var questionDiv = $("<div class='question'>");
+      var questionDiv = $("<div>");
       questionDiv.addClass("question");
-      questionDiv.attr("data-name", response.results[i].question);
       questionDiv.text(response.results[i].question);
 
-      $("#questions-view").append(questionDiv);
+      var answersDiv = $("<div>");
+      answersDiv.addClass("answers");
+      answersDiv.text(response.results[i].correct_answer);
+
+
+
+
+      $("#questions-view").append(questionDiv)
+      $("#answers-view").append(answersDiv)
     }
   });
 };
 
-renderQuestion();
+renderQuestion()
