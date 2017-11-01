@@ -1,6 +1,4 @@
 # team-project-1
-
-
 Project Title: 
 Jeopardy
 

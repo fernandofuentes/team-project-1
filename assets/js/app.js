@@ -27,13 +27,14 @@ function renderQuestion() {
       // Next for lines creates the Questions Divs
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
-      questionDiv.text(response.results[i].question);
+      questionDiv.html(response.results[i].question);
 
       var answersDiv = $("<div>");
       answersDiv.addClass("answers");
-      answersDiv.text(response.results[i].correct_answer);
+      answersDiv.html(response.results[i].correct_answer);
 
-
+      console.log(response.results[i].question)
+      console.log(response.results[i].correct_answer)
 
 
       $("#questions-view").append(questionDiv)
@@ -43,5 +44,3 @@ function renderQuestion() {
 };
 
 renderQuestion()
-console.log(questionDiv)
-console.log(answersDiv)
