@@ -43,3 +43,5 @@ function renderQuestion() {
 };
 
 renderQuestion()
+console.log(questionDiv)
+console.log(answersDiv)
