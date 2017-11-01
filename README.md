@@ -1,11 +1,10 @@
 # team-project-1
-
 Project Title: 
 Jeopardy
 
 Team Members:
 Fernando Fuentes - Git Master
-Daniel Connor 
+Daniel Smith 
 Batli Joselevitz
 Brandon Gatlin
 Jenny Usrey-Scott - Project Manager
