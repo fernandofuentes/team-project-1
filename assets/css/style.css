@@ -1,0 +1,34 @@
+body {
+	background: black;
+	color: white;
+}
+
+table {
+	border: 5px solid #D37220;
+	padding: 5px;
+	text-align: center;
+	background: #553C67;
+	color: white;
+}
+
+th, td {
+	border: 2px solid #d37220;
+	background: #553C67;
+	color: white;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+}
+
+#title {
+	background: #D37220;
+	text-align: center;
+}
+
+td:hover {
+	background-color: #d37220;
+}
+
+th {
+	color: black;
+}
