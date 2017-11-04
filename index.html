@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>The Awesome Game!</title>
-
   <!-- Latest compiled and minified CSS -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
   <title>Super Awesome Game!</title>
 
 </head>
-
 <body>
 
   <!-- Start FB Login Code; this should all be right after the opening body tag -->
@@ -52,7 +50,6 @@
       }
     }
 
-
     function checkLoginState() {
       FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
@@ -77,13 +74,12 @@
   <button type="button" class="btn btn-primary" id="logout" onclick="logout()">Logout</button>
 
   <!-- END FACEBOOK LOGIN -->
+  <div id="title">
 
-  <div id="title" class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-3">TEAM 2 PROJECT 1 #MEXICOCITY</h1>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-3">
     </div>
@@ -144,19 +140,18 @@
     <div class="col-md-3">
     </div>
   </div>
-
   <br>
   <br>
-
   <div class="row">
     <div class="col-md-2"></div>
-    <div id="player1" class="col-md-2">Player 1</div>
-    <div id="player1Score" class="col-md-2">Score</div>
-    <div id="player2" class="col-md-2">Player 2</div>
-    <div id="player2Score" class="col-md-2">Score</div>
+
+    <div id="player1" class="players col-md-2">Player 1</div>
+    <div id="player1Score" class="scores col-md-2">Score</div>
+    <div id="player2" class="players col-md-2">Player 2</div>
+    <div id="player2Score" class="scores col-md-2">Score</div>
+
     <div class="col-md-2"></div>
   </div>
-
   <br>
   <br>
   <br>
@@ -165,16 +160,11 @@
   <br>
   <br>
   <br>
-
-
-
-
 
   <!-- Questions will get Rendered Here  -->
   <div class="questions-wrapper">
     <div id="questions-view">
       <div id="answers-view">
-
 
       </div>
     </div>
@@ -187,5 +177,5 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
-
 </html>
+
