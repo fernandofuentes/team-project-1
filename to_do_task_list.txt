@@ -1,0 +1,10 @@
+- sketch
+- mark ups
+- design
+- code:
+	- HTML : Batli + Jeni
+	- CSS :  Batli + Fernando
+	- JAVASCRIPT: Daniel + Fernando + Jeni
+	- API: Daniel Brandon
+	- NEW FRAMEWORK: Brandon + Batli [thinking skeleton css]
+- this is just a general idea, we will all collaborate! but this gives at least 2 main areas per person to focus on.
