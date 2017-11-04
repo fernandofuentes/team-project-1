@@ -27,7 +27,7 @@ button {
 	background-color: #553C67;
 	color: white;
 	border-color: #553c67;
-	font-size: 20px;
+	font-size: 30px;
 	font-family: 'Bangers', cursive;
 }
 
@@ -48,11 +48,12 @@ h1 {
 	font-family: 'Bangers', cursive;
 	color: #000000;
 	text-align: center;
-	font-size: 300px;
-	font-weight: 900;
+	font-size: 100px;
+	font-weight: 600;
 }
 
 .scores {
+	padding-top: 20px;
 	text-align: center;
 	border: 5px solid #D37220;
 	background-color: #533C67;
@@ -65,6 +66,7 @@ h1 {
 }
 
 .players {
+	padding-top: 20px;
 	text-align: center;
 	border: 5px solid #533C67;
 	background-color: #D37220;
