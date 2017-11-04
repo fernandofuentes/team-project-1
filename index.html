@@ -4,17 +4,24 @@
 <head>
   <meta charset="UTF-8">Brain Jam!</title>
   <!-- Latest compiled and minified CSS -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="icon" type="image/icon" href="assets/images/brain.ico">
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+<<<<<<< HEAD
 
 
   <title>Brain Jam!</title>
+=======
+  <title>Super Awesome Game!</title>
+
+>>>>>>> 13f5cf050d52e13689d19734ad4936bd088456e4
 </head>
 
 <body>
+
   <!-- Start FB Login Code; this should all be right after the opening body tag -->
   <script>
     window.fbAsyncInit = function() {
@@ -30,7 +37,9 @@
           statusChangeCallback(response);
         });
       }
+
     };
+
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -62,6 +71,7 @@
       })
     }
   </script>
+
   <!-- FB Logout Function -->
   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
@@ -71,8 +81,10 @@
   <!-- End FB Login Code -->
   <!-- Logout Button -->
   <button type="button" class="btn btn-primary" id="logout" onclick="logout()">Logout</button>
+
   <!-- END FACEBOOK LOGIN -->
   <div id="title">
+
     <div class="container">
       <h1 class="display-3">BRAIN JAM!</h1>
     </div>
@@ -141,10 +153,12 @@
   <br>
   <div class="row">
     <div class="col-md-2"></div>
+
     <div id="player1" class="players col-md-2">Player 1</div>
     <div id="player1Score" class="scores col-md-2">Score</div>
     <div id="player2" class="players col-md-2">Player 2</div>
     <div id="player2Score" class="scores col-md-2">Score</div>
+
     <div class="col-md-2"></div>
   </div>
   <br>
@@ -155,13 +169,16 @@
   <br>
   <br>
   <br>
+
   <!-- Questions will get Rendered Here  -->
   <div class="questions-wrapper">
     <div id="questions-view">
       <div id="answers-view">
+
       </div>
     </div>
   </div>
+
   <!-- JavaScript Files -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -171,4 +188,4 @@
 </body>
 
 </html>
-Add Comment Collapse
+
