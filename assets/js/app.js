@@ -11,7 +11,7 @@ function renderQuestion() {
   }).done(function(response) {
 
     // Creating a div to hold the question
-    var questionDiv = $("<div class='question'>");
+    // var questionDiv = $("<div class='question'>");
 
     // Storing the results data
     var results = response.results;
@@ -33,12 +33,12 @@ function renderQuestion() {
       answersDiv.addClass("answers");
       answersDiv.html(response.results[i].correct_answer);
 
-      console.log(response.results[i].question)
-      console.log(response.results[i].correct_answer)
+      // console.log(response.results[i].question)
+      // console.log(response.results[i].correct_answer)
 
+      $("#questions-dump").html(questionDiv)
+      $("#questions-dump").html(answersDiv)
 
-      $("#questions-view").append(questionDiv)
-      $("#answers-view").append(answersDiv)
     }
   });
 };
