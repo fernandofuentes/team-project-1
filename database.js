@@ -16,6 +16,7 @@
 
 
   var database = firebase.database();
+
 var chatData = database.ref("/chat");
 var playersRef = database.ref("players");
 var currentTurnRef = database.ref("turn");
@@ -27,6 +28,13 @@ var playerOneExists = false;
 var playerTwoExists = false;
 var playerOneData = null;
 var playerTwoData = null;
+
+var queryURL = //API
+
+      //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
+
+
+
 
 
    // performing our GET request
@@ -47,12 +55,20 @@ var playerTwoData = null;
 
 //each square is a point value with an on click button that triggers a question
   $(document).on("click", function(event){
+      
+      $(this).attr("data-button", true);
 
+      //data-button = True;
     database.ref().push({
+      //need authentication first
+      "clicked" : True,false;
+
         
       });
   }
 
+//DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
+//EASY/NORMAL/ HARD
 
 
 
