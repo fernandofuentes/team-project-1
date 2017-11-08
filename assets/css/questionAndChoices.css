@@ -3,9 +3,9 @@
 .question {
   text-align: center;
   font-size: 3em;
-  letter-spacing: 3px;
-  padding-left: 3em;
-  padding-right: 3em;
+  letter-spacing: 2px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /* Choices */
