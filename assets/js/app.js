@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
   function renderQuestion() {
 
     var question = $(this).attr("data-name");
@@ -13,30 +11,22 @@ $(document).ready(function() {
     }).done(function(response) {
 
       // Creating a div to hold the question
-      // var questionDiv = $("<div class='question'>");
 
       // Storing the results data
       var results = response.results;
-      console.log(results);
 
       // Storing the question data
-      var question = response.results["0"].question;
-      // console.log(question);
+      var questionResponse = response.results["0"].question;
 
       var correctAnswer = response.results["0"].correct_answer;
-      // console.log(correctAnswer)
 
       var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
       var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
       var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
 
-      // console.log(incorrectAnswer1)
-      // console.log(incorrectAnswer2)
-      // console.log(incorrectAnswer3)
 
-      // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-      // console.log(choicesOrder)
-
+      // Correct and Incorrect Choices array
+      var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
 
 
 
@@ -62,10 +52,9 @@ $(document).ready(function() {
         return array;
       }
 
-      // Used like so
-      var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
       arr = shuffle(choices);
-      // console.log(choices);
+
+
 
       /////////////////////////////////////////////// END RANDOM SHUFFLE
 
@@ -73,7 +62,6 @@ $(document).ready(function() {
 
 
       // Display Question
-
       $("button").click(function() {
         $("table").hide();
         var questionDiv = $("<div>");
@@ -84,24 +72,17 @@ $(document).ready(function() {
 
       // Display Answers
 
-      $("button").click(function() {
-
-        for (i = 0; i < choices.length; i++) {
-          list = "<li>" + choices[i] + "</li>";
-          $(".choices").append(list);
-          document.getElementById("choices").innerHTML = list;
-          list = "";
-
-          // var answersDiv = $("<div>");
-          // answersDiv.addClass("answers");
-          // answersDiv.html(choices);
-          // $(".choices").html(choices);
-        };
-      });
-
-
+      // $("button").click(function() {
+      //
+      //   for (i = 0; i < choices.length; i++) {
+      //     list = "<li>" + choices[i] + "</li>";
+      //     $(".choices").append(list);
+      //     document.getElementById("choices").innerHTML = list;
+      //     list = "";
+      //   };
+      // });
 
     });
-  };
+  }
 });
-renderQuestion()
+renderQuestion();

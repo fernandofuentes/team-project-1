@@ -3,6 +3,7 @@
 
 
 
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
@@ -17,7 +18,24 @@
 
   var database = firebase.database();
 
-  var queryURL = "https://opentdb.com/api.php?amount=25"
+var chatData = database.ref("/chat");
+var playersRef = database.ref("players");
+var currentTurnRef = database.ref("turn");
+var username = "Guest";
+var currentPlayers = null;
+var currentTurn = null;
+var playerNum = false;
+var playerOneExists = false;
+var playerTwoExists = false;
+var playerOneData = null;
+var playerTwoData = null;
+
+var queryURL = //API
+
+      //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
+
+
+
 
 
    // performing our GET request
@@ -37,10 +55,30 @@
 });
 
 //each square is a point value with an on click button that triggers a question
-  $(document).on("click", function(event){
+  $("tbody").on("click", function(event){
+      console.log(event);
+      
+      $(this).attr("da", true);
+
+      //data-button = True;
+    
+//if its true it can not be cliked again
+        
+      foo(false)
+  }
+
+  function foo(isCorrect){
+    database.ref().push({
+      //need authentication first
+      "clicked" : true;
+
+        
+      });
 
   }
 
+//DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
+//EASY/NORMAL/ HARD
 
 
 
