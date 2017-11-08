@@ -65,7 +65,7 @@ $(document).ready(function() {
       // Used like so
       var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
       arr = shuffle(choices);
-      console.log(choices);
+      // console.log(choices);
 
       /////////////////////////////////////////////// END RANDOM SHUFFLE
 
@@ -86,69 +86,22 @@ $(document).ready(function() {
 
       $("button").click(function() {
 
-
-
-
-
-
-        var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-
-
-        var list = "";
-
-        for (i = 0; i < games.length; i++) {
+        for (i = 0; i < choices.length; i++) {
           list = "<li>" + choices[i] + "</li>";
           $(".choices").append(list);
           document.getElementById("choices").innerHTML = list;
           list = "";
-        }
 
-
-
-
-
-
-
-
-
-        var answersDiv = $("<div>");
-        answersDiv.addClass("answers");
-        answersDiv.html(choices);
-        $(".choices").html(choices);
+          // var answersDiv = $("<div>");
+          // answersDiv.addClass("answers");
+          // answersDiv.html(choices);
+          // $(".choices").html(choices);
+        };
       });
 
 
 
-
-
-
-
-      // The ForLoop to display incorrectAnswers
-      for (i = 0; i < results.length; i++) {
-
-
-
-
-
-
-
-
-
-        // console.log(response.results[i].question);
-        // Next for lines creates the Questions Divs
-
-
-
-        // console.log(response.results[i].question)
-        // console.log(response.results[i].correct_answer)
-
-
-
-        // $("#questions-dump").append();
-
-      }
     });
   };
-  renderQuestion()
-
 });
+renderQuestion()
