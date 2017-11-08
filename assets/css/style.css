@@ -1,81 +1,75 @@
-
-
 table {
-	border: 5px solid #0069D9;
-	padding: 5px;
-	text-align: center;
-	background: #553C67;
-	color: white;
+  margin: 0 auto;
+  border: 5px solid #0069D9;
+  padding: 5px;
+  text-align: center;
+  background: #553C67;
+  color: white;
 }
 
 th {
-	width: 100px;
-	height: 100px;
-	background-color: white;
-	color: #F4C500;
-	border-color: black;
-	font-size: 20px;
-	font-family: 'Bangers', cursive;
-	border: 2px solid #0069D9;
-	border-width: thick;
-	padding-top: 40px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #F4C500;
+  border-color: black;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+  border-width: thick;
+  padding-top: 40px;
 }
-
-
 
 td {
-	width: 100px;
-	height: 100px;
-	background-color: white;
-	color: #F4C500;
-	border-color: black;
-	font-size: 20px;
-	font-family: 'Bangers', cursive;
-	border: 2px solid #0069D9;
-	border-width: thick;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #F4C500;
+  border-color: black;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+  border-width: thick;
 }
 
-
 button {
-	width: 100px;
-	height: 100px;
-	background-color: white;
-	color: #F4C500;
-	border-color: black;
-	font-size: 20px;
-	font-family: 'Bangers', cursive;
-	border: 2px solid #0069D9;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #F4C500;
+  border-color: black;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
 }
 
 button:hover {
-	background-color: #0069D9;
+  background-color: #0069D9;
 }
 
 body {
-	font-family: 'Bangers', cursive;
-	background-color: #000000;
-	color: white;
-	background-image: url("../images/game.jpg");
-	background-position: center;
-	background-size: cover;
+  font-family: 'Bangers', cursive;
+  background-color: #000000;
+  color: white;
+  background-image: url("../images/game.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 h1 {
-	font-family: 'Bangers', cursive;
-	color: #F4C500;
-	text-align: center;
-	font-size: 100px;
-	font-weight: 600;
-	text-indent: 180px;
+  font-family: 'Bangers', cursive;
+  color: #F4C500;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 600;
+  text-indent: 180px;
 }
 
 .scores {
-	text-align: center;
-	border: 5px solid #F4C500;
-	color: #F4C500;
-	font-size: 25px;
-	border-radius: 20px;
-	font-family: 'Bangers', cursive;
+  text-align: center;
+  border: 5px solid #F4C500;
+  color: #F4C500;
+  font-size: 25px;
+  border-radius: 20px;
+  font-family: 'Bangers', cursive;
 }
-
-
