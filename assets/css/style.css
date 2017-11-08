@@ -62,7 +62,7 @@ h1 {
   text-align: center;
   font-size: 100px;
   font-weight: 600;
-  text-indent: 180px;
+  /*text-indent: 180px;*/
 }
 
 .scores {
