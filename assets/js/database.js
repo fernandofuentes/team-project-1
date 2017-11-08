@@ -54,17 +54,26 @@ var queryURL = //API
 });
 
 //each square is a point value with an on click button that triggers a question
-  $(document).on("click", function(event){
+  $("tbody").on("click", function(event){
+      console.log(event);
       
-      $(this).attr("data-button", true);
+      $(this).attr("da", true);
 
       //data-button = True;
+    
+//if its true it can not be cliked again
+        
+      foo(false)
+  }
+
+  function foo(isCorrect){
     database.ref().push({
       //need authentication first
-      "clicked" : True,false;
+      "clicked" : true;
 
         
       });
+
   }
 
 //DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
