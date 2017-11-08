@@ -16,8 +16,17 @@
 
 
   var database = firebase.database();
-
-  var queryURL = "https://opentdb.com/api.php?amount=25"
+var chatData = database.ref("/chat");
+var playersRef = database.ref("players");
+var currentTurnRef = database.ref("turn");
+var username = "Guest";
+var currentPlayers = null;
+var currentTurn = null;
+var playerNum = false;
+var playerOneExists = false;
+var playerTwoExists = false;
+var playerOneData = null;
+var playerTwoData = null;
 
 
    // performing our GET request
@@ -39,6 +48,9 @@
 //each square is a point value with an on click button that triggers a question
   $(document).on("click", function(event){
 
+    database.ref().push({
+        
+      });
   }
 
 
