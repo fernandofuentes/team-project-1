@@ -29,7 +29,11 @@ var playerTwoExists = false;
 var playerOneData = null;
 var playerTwoData = null;
 
-var queryURL = //API
+var easyURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple"
+
+var mediumURL = "https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple";
+
+var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple";
 
       //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
 
@@ -39,7 +43,7 @@ var queryURL = //API
 
    // performing our GET request
       $.ajax({
-          url: queryURL,
+          url: easyURL,
           method: "GET"
         })
 
@@ -48,10 +52,50 @@ var queryURL = //API
           console.log(response);
 
           //storing the array of results in the variable
-          var results = response.data;
-          console.log(results);
-          
-});
+          var results = response.results;
+          console.log("easy"+JSON.stringify(results));
+
+          for (var i = 0; i < results.length; i++){
+            console.log(results[i].question);
+       var button = $("button")
+       button.attr("data-question", results[i].question)
+
+            console.log(results[i].correct_answer);
+
+          }
+
+        });
+
+          $.ajax({
+            url: mediumURL,
+            method: "GET"
+          })
+  
+        // after the data request
+          .done(function(response) {
+            console.log(response);
+  
+            //storing the array of results in the variable
+            var results = response.results;
+            console.log("medium"+JSON.stringify(results));
+          });
+
+          $.ajax({
+            url: hardURL,
+            method: "GET"
+          })
+  
+        // after the data request
+          .done(function(response) {
+            console.log(response);
+  
+            //storing the array of results in the variable
+            var results = response.results;
+            console.log("hard"+JSON.stringify(results));
+
+          });
+
+
 
 //each square is a point value with an on click button that triggers a question
   $("tbody").on("click", function(event){
@@ -64,17 +108,17 @@ var queryURL = //API
 //if its true it can not be cliked again
         
       foo(false)
-  }
+  })
 
   function foo(isCorrect){
     database.ref().push({
       //need authentication first
-      "clicked" : true;
+      "clicked" : true
 
         
       });
-
-  }
+    }
+  
 
 //DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
 //EASY/NORMAL/ HARD
