@@ -1,122 +1,106 @@
-function renderQuestion() {
-
-  var question = $(this).attr("data-name");
-  var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
-
-  // Creating an AJAX call for the specific movie button being clicked
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).done(function(response) {
-
-    // Creating a div to hold the question
-    // var questionDiv = $("<div class='question'>");
-
-    // Storing the results data
-    var results = response.results;
-    console.log(results);
-
-    // Storing the question data
-    var question = response.results["0"].question;
-    // console.log(question);
-
-    var correctAnswer = response.results["0"].correct_answer;
-    // console.log(correctAnswer)
-
-    var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
-    var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
-    var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
-
-    // console.log(incorrectAnswer1)
-    // console.log(incorrectAnswer2)
-    // console.log(incorrectAnswer3)
-
-    // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-    // console.log(choicesOrder)
+$(document).ready(function() {
 
 
+      function renderQuestion() {
 
+        var question = $(this).attr("data-name");
+        var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
-    /////////////////////////////////////////////// RANDOM SHUFFLE
+        // Creating an AJAX call for the specific movie button being clicked
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
 
-    function shuffle(array) {
-      var currentIndex = array.length,
-        temporaryValue, randomIndex;
+          // Creating a div to hold the question
+          // var questionDiv = $("<div class='question'>");
 
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
+          // Storing the results data
+          var results = response.results;
+          console.log(results);
 
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+          // Storing the question data
+          var question = response.results["0"].question;
+          // console.log(question);
 
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
+          var correctAnswer = response.results["0"].correct_answer;
+          // console.log(correctAnswer)
 
-      return array;
-    }
+          var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
+          var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
+          var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
 
-    // Used like so
-    var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-    arr = shuffle(choices);
-    console.log(choices);
+          // console.log(incorrectAnswer1)
+          // console.log(incorrectAnswer2)
+          // console.log(incorrectAnswer3)
 
-    /////////////////////////////////////////////// END RANDOM SHUFFLE
+          // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+          // console.log(choicesOrder)
 
 
 
 
-    // Display Question
+          /////////////////////////////////////////////// RANDOM SHUFFLE
 
-    $("button").click(function() {
-      var questionDiv = $("<div>");
-      questionDiv.addClass("question");
-      questionDiv.html(response.results["0"].question);
-      $(".question").html(question);
-    });
+          function shuffle(array) {
+            var currentIndex = array.length,
+              temporaryValue, randomIndex;
 
-    // Display Answers
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
 
-    $("button").click(function() {
-      var answersDiv = $("<div>");
-      answersDiv.addClass("answers");
-      answersDiv.html(response.results[i].correct_answer);
-      $(".choices").html(choices);
-    });
+              // Pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex -= 1;
 
+              // And swap it with the current element.
+              temporaryValue = array[currentIndex];
+              array[currentIndex] = array[randomIndex];
+              array[randomIndex] = temporaryValue;
+            }
 
+            return array;
+          }
 
+          // Used like so
+          var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+          arr = shuffle(choices);
+          // console.log(choices);
 
-
-
-
-    // The ForLoop to display incorrectAnswers
-    for (i = 0; i < results.length; i++) {
-
-
-
-
+          /////////////////////////////////////////////// END RANDOM SHUFFLE
 
 
 
 
+          // Display Question
 
-      // console.log(response.results[i].question);
-      // Next for lines creates the Questions Divs
+          $("button").click(function() {
+            $("table").hide();
+            var questionDiv = $("<div>");
+            questionDiv.addClass("question");
+            questionDiv.html(response.results["0"].question);
+            $(".question").html(question);
+          });
+
+          // Display Answers
+
+          $("button").click(function() {
+
+            for (i = 0; i < choices.length; i++) {
+              list = "<li>" + choices[i] + "</li>";
+              $(".choices").append(list);
+              document.getElementById("choices").innerHTML = list;
+              list = "";
+
+              // var answersDiv = $("<div>");
+              // answersDiv.addClass("answers");
+              // answersDiv.html(choices);
+              // $(".choices").html(choices);
+            };
+          });
 
 
 
-      // console.log(response.results[i].question)
-      // console.log(response.results[i].correct_answer)
-
-
-
-      // $("#questions-dump").append();
-
-    }
-  });
-};
-renderQuestion()
+        });
+      };
+      renderQuestion()
