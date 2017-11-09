@@ -11,7 +11,7 @@ function renderQuestion() {
 
     // Storing the results data
     var results = response.results;
-    console.log(results);
+    // console.log(results);
 
     // Storing the question data
     var question = response.results["0"].question;
@@ -29,8 +29,6 @@ function renderQuestion() {
     // console.log(incorrectAnswer3)
     // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
     // console.log(choicesOrder)
-
-
 
     /////////////////////////////////////////////// RANDOM SHUFFLE
 
@@ -57,7 +55,7 @@ function renderQuestion() {
     // Used like so
     var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
     arr = shuffle(choices);
-    console.log(choices);
+    // console.log(choices);
 
     /////////////////////////////////////////////// END RANDOM SHUFFLE
 
@@ -100,7 +98,20 @@ function renderQuestion() {
 
 
 
+
+
+
+
+
+
   });
 };
+
+
+
+
+
+
+
 
 renderQuestion()
