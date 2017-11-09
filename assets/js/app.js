@@ -9,9 +9,6 @@ function renderQuestion() {
     method: "GET"
   }).done(function(response) {
 
-    // Creating a div to hold the question
-    // var questionDiv = $("<div class='question'>");
-
     // Storing the results data
     var results = response.results;
     console.log(results);
@@ -30,10 +27,8 @@ function renderQuestion() {
     // console.log(incorrectAnswer1)
     // console.log(incorrectAnswer2)
     // console.log(incorrectAnswer3)
-
     // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
     // console.log(choicesOrder)
-
 
 
 
@@ -66,12 +61,9 @@ function renderQuestion() {
 
     /////////////////////////////////////////////// END RANDOM SHUFFLE
 
-
-
-
     // Display Question
-
     $("button").click(function() {
+      $("table").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
       questionDiv.html(response.results["0"].question);
@@ -79,14 +71,12 @@ function renderQuestion() {
     });
 
     // Display Answers
-
     $("button").click(function() {
       var answersDiv = $("<div>");
       answersDiv.addClass("answers");
       answersDiv.html(response.results[i].correct_answer);
       $(".choices").html(choices);
     });
-
   });
 };
 renderQuestion()
