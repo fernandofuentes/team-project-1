@@ -24,6 +24,10 @@ function renderQuestion() {
     var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
     var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
 
+    var numberOfQuestions = 30;
+    var player1Score = 0;
+    var player2Score = 0;
+
     // console.log(incorrectAnswer1)
     // console.log(incorrectAnswer2)
     // console.log(incorrectAnswer3)
@@ -59,21 +63,21 @@ function renderQuestion() {
 
     /////////////////////////////////////////////// END RANDOM SHUFFLE
 
-    // Display Question
+    // Display Question and Choices on Click
     $("button").click(function() {
       $("table").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
       questionDiv.html(response.results["0"].question);
       $(".question").html(question);
-    });
 
-    // // Display Answers
-    var options = [
-      choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-    ];
 
-    $("button").click(function() {
+
+      // // Display Answers
+      var options = [
+        choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+      ];
+
       function makeUL(array) {
         // Create the list element:
         var list = document.createElement('ul');
@@ -94,7 +98,33 @@ function renderQuestion() {
       }
       // Display the choices
       document.getElementById('choices-div').appendChild(makeUL(options[0]));
+
     });
+
+
+
+    // $("button").click(function() {
+    //   // function makeUL(array) {
+    //   //   // Create the list element:
+    //   //   var list = document.createElement('ul');
+    //   //
+    //   //   for (var i = 0; i < array.length; i++) {
+    //   //     // Create the list item:
+    //   //     var item = document.createElement('li');
+    //   //
+    //   //     // Set its contents:
+    //   //     item.appendChild(document.createTextNode(array[i]));
+    //   //
+    //   //     // Add it to the list:
+    //   //     list.appendChild(item);
+    //   //   }
+    //   //
+    //   //   // Finally, return the constructed list:
+    //   //   return list;
+    //   // }
+    //   // // Display the choices
+    //   // document.getElementById('choices-div').appendChild(makeUL(options[0]));
+    // });
 
 
 
