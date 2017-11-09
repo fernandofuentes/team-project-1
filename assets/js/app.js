@@ -70,13 +70,37 @@ function renderQuestion() {
       $(".question").html(question);
     });
 
-    // Display Answers
-    $("button").click(function() {
-      var answersDiv = $("<div>");
-      answersDiv.addClass("answers");
-      answersDiv.html(response.results[i].correct_answer);
-      $(".choices").html(choices);
-    });
+    // // Display Answers
+
+    // $("button").click(function() {
+    var options = [
+      choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    ];
+
+    function makeUL(array) {
+      // Create the list element:
+      var list = document.createElement('ul');
+
+      for (var i = 0; i < array.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+
+        // Set its contents:
+        item.appendChild(document.createTextNode(array[i]));
+
+        // Add it to the list:
+        list.appendChild(item);
+      }
+
+      // Finally, return the constructed list:
+      return list;
+    }
+    // });
+
+    // Add the contents of options[0] to #choices:
+    document.getElementById('choices-div').appendChild(makeUL(options[0]));
+
   });
 };
+
 renderQuestion()
