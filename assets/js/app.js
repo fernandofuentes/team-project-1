@@ -1,8 +1,7 @@
-// displayMovieInfo function re-renders the HTML to display the appropriate content
 function renderQuestion() {
 
   var question = $(this).attr("data-name");
-  var queryURL = "https://opentdb.com/api.php?amount=9";
+  var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
   // Creating an AJAX call for the specific movie button being clicked
   $.ajax({
@@ -10,28 +9,128 @@ function renderQuestion() {
     method: "GET"
   }).done(function(response) {
 
-    // Creating a div to hold the question
-    var questionDiv = $("<div class='question'>");
-
     // Storing the results data
     var results = response.results;
-    //console.log(results);
+    // console.log(results);
 
     // Storing the question data
     var question = response.results["0"].question;
     // console.log(question);
 
-    // The ForLoop to display the number of questions
-    for (i = 0; i < results.length; i++) {
-      // console.log(response.results[i].question);
-      // Next for lines creates the Questions Divs
+    var correctAnswer = response.results["0"].correct_answer;
+    // console.log(correctAnswer)
+
+    var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
+    var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
+    var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
+
+    var numberOfQuestions = 30;
+    var player1Score = 0;
+    var player2Score = 0;
+
+    // console.log(incorrectAnswer1)
+    // console.log(incorrectAnswer2)
+    // console.log(incorrectAnswer3)
+    // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    // console.log(choicesOrder)
+
+    /////////////////////////////////////////////// RANDOM SHUFFLE
+
+    function shuffle(array) {
+      var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+    // Used like so
+    var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    arr = shuffle(choices);
+    // console.log(choices);
+
+    /////////////////////////////////////////////// END RANDOM SHUFFLE
+
+    // Display Question and Choices on Click
+    $("button").click(function() {
+      $("table").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
-      questionDiv.html(response.results[i].question);
+      questionDiv.html(response.results["0"].question);
+      $(".question").html(question);
 
-      var answersDiv = $("<div>");
-      answersDiv.addClass("answers");
-      answersDiv.html(response.results[i].correct_answer);
+
+
+      // // Display Answers
+      var options = [
+        choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+      ];
+
+      function makeUL(array) {
+        // Create the list element:
+        var list = document.createElement('ul');
+
+        for (var i = 0; i < array.length; i++) {
+          // Create the list item:
+          var item = document.createElement('li');
+
+          // Set its contents:
+          item.appendChild(document.createTextNode(array[i]));
+
+          // Add it to the list:
+          list.appendChild(item);
+        }
+
+        // Finally, return the constructed list:
+        return list;
+      }
+      // Display the choices
+      document.getElementById('choices-div').appendChild(makeUL(options[0]));
+
+    });
+
+
+
+    // $("button").click(function() {
+    //   // function makeUL(array) {
+    //   //   // Create the list element:
+    //   //   var list = document.createElement('ul');
+    //   //
+    //   //   for (var i = 0; i < array.length; i++) {
+    //   //     // Create the list item:
+    //   //     var item = document.createElement('li');
+    //   //
+    //   //     // Set its contents:
+    //   //     item.appendChild(document.createTextNode(array[i]));
+    //   //
+    //   //     // Add it to the list:
+    //   //     list.appendChild(item);
+    //   //   }
+    //   //
+    //   //   // Finally, return the constructed list:
+    //   //   return list;
+    //   // }
+    //   // // Display the choices
+    //   // document.getElementById('choices-div').appendChild(makeUL(options[0]));
+    // });
+
+
+
+
+
+
 
 
       console.log(response.results[i].question)
@@ -39,10 +138,15 @@ function renderQuestion() {
       console.log(response.results[i].incorrect_answers)
 
 
-      $("#questions-view").append(questionDiv)
-      $("#answers-view").append(answersDiv)
-    }
   });
 };
+
+renderQuestion()
+
+
+
+
+
+
 
 renderQuestion()
