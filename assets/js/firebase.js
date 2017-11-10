@@ -62,7 +62,7 @@ console.log("firebase.js loaded");
   //if its true it can not be cliked again
 
         foo(false)
-    }
+    });
 
     function foo(isCorrect){
       database.ref().push({
