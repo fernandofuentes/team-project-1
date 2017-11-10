@@ -3,6 +3,7 @@
 
 
 
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
@@ -63,7 +64,6 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
             console.log(results[i].correct_answer);
 
           }
-
         });
 
           $.ajax({
@@ -78,6 +78,15 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
             //storing the array of results in the variable
             var results = response.results;
             console.log("medium"+JSON.stringify(results));
+
+            for (var i = 0; i < results.length; i++){
+              console.log(results[i].question);
+         var button = $("button")
+         button.attr("data-question", results[i].question)
+
+         console.log(results[i].correct_answer);
+
+            }
           });
 
           $.ajax({
@@ -93,6 +102,14 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
             var results = response.results;
             console.log("hard"+JSON.stringify(results));
 
+            for (var i = 0; i < results.length; i++){
+              console.log(results[i].question);
+         var button = $("button")
+         button.attr("data-question", results[i].question)
+
+         console.log(results[i].correct_answer);
+
+            }
           });
 
 
