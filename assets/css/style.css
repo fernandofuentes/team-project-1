@@ -105,11 +105,25 @@ h1 {
 #name-submit {
   width: 150px;
   height: 45px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+
 }
 
 #message-submit {
   width: 150px;
   height: 45px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+
 }
 
 #message-input {
