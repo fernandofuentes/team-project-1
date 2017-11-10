@@ -33,8 +33,10 @@ function renderQuestion() {
       answersDiv.addClass("answers");
       answersDiv.html(response.results[i].correct_answer);
 
+
       console.log(response.results[i].question)
       console.log(response.results[i].correct_answer)
+      console.log(response.results[i].incorrect_answers)
 
 
       $("#questions-view").append(questionDiv)
