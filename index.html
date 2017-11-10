@@ -18,66 +18,6 @@
 
 <body>
 
-  <!-- Start FB Login Code; this should all be right after the opening body tag -->
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId: '218361788702874',
-        cookie: true,
-        xfbml: true,
-        version: 'v2.10'
-      });
-
-      function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-        });
-      }
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    function statusChangeCallback(response) {
-      if (response.status === 'connected') {
-        console.log('logged in and authenticated')
-      } else {
-        console.log('not authenticated')
-      }
-    }
-
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-
-    // FB Logout Function
-    function logout() {
-      FB.logout(function(response) {
-        checkLoginState()
-      })
-    }
-  </script>
-
-  <!-- FB Logout Function -->
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-  </fb:login-button>
-  <!-- FB like and share buttons -->
-  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
-  </div>
-  <!-- End FB Login Code -->
-  <!-- Logout Button -->
-  <button type="button" class="btn btn-outline-primary">FB Log Out</button>
-
-  <!-- END FACEBOOK LOGIN -->
   <div id="title">
 
     <div class="container">
@@ -87,13 +27,22 @@
 
   <br>
   <br>
+<div class = "col-md-5">
+</div>
 
-  <div id: "facebook"></div>
+  <div id = "facebook" class = "col-md-2">
+    <button class="loginBtn loginBtn--facebook">
+      Login with Facebook
+    </button>
+  </div>
+
+  <div class = "col-md-5">
+  </div>
 
   <br>
   <br>
 
-  <div id = "questions" class="row question-popup-row">
+  <div id="questions" class="row question-popup-row">
     <div class="col-md-12">
       <div class="question-popup"></div>
       <div class="question"></div>
@@ -105,7 +54,32 @@
 
   <div style="margin: 0 auto;" class="row">
 
-    <div id = "chatbox" class = "col-md-4">This is where we will have all of the chat.</div>
+    <div class="container text-center">
+
+      <!-- this is where our messages will be displayed -->
+      <div class="row text-center">
+        <div class="col-md-6">
+          <div id="chat-box" class="text-left well">
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- form to input our user name -->
+      <form id="name-form">
+        <input type="text" placeholder="Enter Name" id="name-input">
+        <button id="name-submit">Submit</button>
+      </form>
+
+      <!-- form to input our messages -->
+      <form id="message-form">
+        <input type="text" placeholder="Enter message" id="message-input">
+        <button id="message-submit">Send</button>
+      </form>
+
+
+    </div>
 
     <div class="col-md-6">
       <table>
@@ -120,48 +94,48 @@
         <tbody id="gameGrid">
 
           <tr>
-            <td><button>$100</button></td>
-            <td><button>$100</button></td>
-            <td><button>$100</button></td>
-            <td><button>$100</button></td>
-            <td><button>$100</button></td>
-            <td><button>$100</button></td>
+            <td><button class = "gameButton easy">$100</button></td>
+            <td><button class = "gameButton easy" >$100</button></td>
+            <td><button class = "gameButton easy">$100</button></td>
+            <td><button class = "gameButton easy">$100</button></td>
+            <td><button class = "gameButton easy">$100</button></td>
+            <td><button class = "gameButton easy">$100</button></td>
           </tr>
 
           <tr>
-            <td><button>$200</button></td>
-            <td><button>$200</button></td>
-            <td><button>$200</button></td>
-            <td><button>$200</button></td>
-            <td><button>$200</button></td>
-            <td><button>$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
+            <td><button class = "gameButton easy">$200</button></td>
           </tr>
 
           <tr>
-            <td><button>$300</button></td>
-            <td><button>$300</button></td>
-            <td><button>$300</button></td>
-            <td><button>$300</button></td>
-            <td><button>$300</button></td>
-            <td><button>$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
+            <td><button class = "gameButton medium">$300</button></td>
           </tr>
 
           <tr>
-            <td><button>$400</button></td>
-            <td><button>$400</button></td>
-            <td><button>$400</button></td>
-            <td><button>$400</button></td>
-            <td><button>$400</button></td>
-            <td><button>$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
+            <td><button class = "gameButton hard">$400</button></td>
           </tr>
 
           <tr>
-            <td><button>$500</button></td>
-            <td><button>$500</button></td>
-            <td><button>$500</button></td>
-            <td><button>$500</button></td>
-            <td><button>$500</button></td>
-            <td><button>$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
+            <td><button class = "gameButton hard">$500</button></td>
           </tr>
 
         </tbody>
@@ -201,6 +175,9 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
   <script src="assets/js/database.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/chat.js"></script>
+  <script src="assets/js/auth.js"></script>
+
 
   <script src="assets/js/database.js"></script>
 

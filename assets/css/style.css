@@ -11,7 +11,7 @@ th {
   width: 150px;
   height: 150px;
   background-color: #F4C500;
-  color: black;
+  color: white;
   border-color: black;
   font-size: 25px;
   font-family: 'Bangers', cursive;
@@ -31,7 +31,7 @@ td {
   border: 2px solid #0069D9;
 }
 
-button {
+.gameButton {
   width: 150px;
   height: 150px;
   background-color: white;
@@ -42,7 +42,7 @@ button {
   border: 2px solid #0069D9;
 }
 
-button:hover {
+.gameButton:hover {
   background-color: #0069D9;
   color: white;
 }
@@ -73,15 +73,117 @@ h1 {
   font-family: 'Bangers', cursive;
 }
 
-#chatbox {
+#chat-box {
   padding: 20px;
   font-family: 'Delius', cursive;
   font-size: 20px;
   margin-left: 225px;
-  height: 625px;
-  width: 300px;
+  height: 300px;
+  width: 600px;
   border: 3px solid #0069D9;
   background-color: white;
   border-width: thick;
   color: #0069D9;
+  overflow: auto;
+}
+
+#message-form {
+  display: none;
+}
+
+#name-input {
+  width: 150px;
+  height: 45px;
+  border: 2px solid #0069D9;
+  background-color: white;
+  color: #0069D9;
+  font-size: 25px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+}
+
+#name-submit {
+  width: 150px;
+  height: 45px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+
+}
+
+#message-submit {
+  width: 150px;
+  height: 45px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+
+}
+
+#message-input {
+  width: 150px;
+  height: 45px;
+  border: 2px solid #0069D9;
+  background-color: white;
+  color: #0069D9;
+  font-size: 25px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+}
+
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+
+.loginBtn:focus {
+  outline: none;
+}
+
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+/* Facebook */
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+
+.loginBtn--facebook:hover, .loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
 }

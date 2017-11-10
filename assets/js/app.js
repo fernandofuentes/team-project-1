@@ -64,7 +64,7 @@ function renderQuestion() {
     /////////////////////////////////////////////// END RANDOM SHUFFLE
 
     // Display Question and Choices on Click
-    $("button").click(function() {
+    $(".gameButton").click(function() {
       $("table").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
