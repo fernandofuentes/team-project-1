@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Fernando is awesome! -->
+
 <head>
   <meta charset="UTF-8">
   <title>Brain Jam!</title>
@@ -55,6 +57,7 @@
         statusChangeCallback(response);
       });
     }
+
     // FB Logout Function
     function logout() {
       FB.logout(function(response) {
@@ -71,7 +74,7 @@
   </div>
   <!-- End FB Login Code -->
   <!-- Logout Button -->
-  <button type="button" class="btn btn-primary" id="logout" onclick="logout()">Logout</button>
+  <button type="button" class="btn btn-outline-primary">FB Log Out</button>
 
   <!-- END FACEBOOK LOGIN -->
   <div id="title">
@@ -81,20 +84,28 @@
     </div>
   </div>
 
+  <br>
+  <br>
+
+  <div id: "facebook"></div>
+
+  <br>
+  <br>
+
   <div class="row question-popup-row">
     <div class="col-md-12">
       <div class="question-popup"></div>
       <div class="question"></div>
-      <div class="choices-div">
-        <ul id="choices">
+      <div id="choices-div">
 
-        </ul>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-3"></div>
+  <div style="margin: 0 auto;" class="row">
+
+    <div id = "chatbox" class = "col-md-4"></div>
+
     <div class="col-md-6">
       <table>
         <tr>
@@ -106,14 +117,16 @@
           <th>Category 6</th>
         </tr>
         <tbody id="gameGrid">
+
           <tr>
-            <td><button data-show=false>$100</button></td>
+            <td><button>$100</button></td>
             <td><button>$100</button></td>
             <td><button>$100</button></td>
             <td><button>$100</button></td>
             <td><button>$100</button></td>
             <td><button>$100</button></td>
           </tr>
+
           <tr>
             <td><button>$200</button></td>
             <td><button>$200</button></td>
@@ -122,6 +135,7 @@
             <td><button>$200</button></td>
             <td><button>$200</button></td>
           </tr>
+
           <tr>
             <td><button>$300</button></td>
             <td><button>$300</button></td>
@@ -130,6 +144,7 @@
             <td><button>$300</button></td>
             <td><button>$300</button></td>
           </tr>
+
           <tr>
             <td><button>$400</button></td>
             <td><button>$400</button></td>
@@ -138,6 +153,7 @@
             <td><button>$400</button></td>
             <td><button>$400</button></td>
           </tr>
+
           <tr>
             <td><button>$500</button></td>
             <td><button>$500</button></td>
@@ -146,56 +162,43 @@
             <td><button>$500</button></td>
             <td><button>$500</button></td>
           </tr>
+
         </tbody>
       </table>
     </div>
-    <div class="col-md-3">
-    </div>
   </div>
   <br>
   <br>
+
+
   <div class="row">
     <div class="col-md-2"></div>
-
-    <div id="player1" class="players col-md-2">Player 1</div>
-    <div id="player1Score" class="scores col-md-2">Score</div>
-    <div id="player2" class="players col-md-2">Player 2</div>
-    <div id="player2Score" class="scores col-md-2">Score</div>
-
+    <div class="fixed-bottom col-md-8">
+      <div id="player1" class="players col-md-2">Player 1</div>
+      <div id="player1Score" class="scores col-md-2">Score</div>
+      <div id="player2" class="players col-md-2">Player 2</div>
+      <div id="player2Score" class="scores col-md-2">Score</div>
+    </div>
     <div class="col-md-2"></div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
-  <!-- Questions will get Rendered Here  -->
-  <div class="questions-wrapper">
-    <div id="questions-view">
-      <div id="answers-view">
-
-      </div>
-    </div>
-  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <!-- JavaScript Files -->
 
 
-  
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
   <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-
   <script src="assets/js/database.js"></script>
-  
   <script src="assets/js/app.js"></script>
 
   <script src="assets/js/database.js"></script>

@@ -1,106 +1,113 @@
-$(document).ready(function() {
+function renderQuestion() {
 
+  var question = $(this).attr("data-name");
+  var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
-      function renderQuestion() {
+  // Creating an AJAX call for the specific movie button being clicked
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).done(function(response) {
 
-        var question = $(this).attr("data-name");
-        var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
+    // Storing the results data
+    var results = response.results;
+    // console.log(results);
 
-        // Creating an AJAX call for the specific movie button being clicked
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).done(function(response) {
+    // Storing the question data
+    var question = response.results["0"].question;
+    // console.log(question);
 
-          // Creating a div to hold the question
-          // var questionDiv = $("<div class='question'>");
+    var correctAnswer = response.results["0"].correct_answer;
+    // console.log(correctAnswer)
 
-          // Storing the results data
-          var results = response.results;
-          console.log(results);
+    var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
+    var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
+    var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
 
-          // Storing the question data
-          var question = response.results["0"].question;
-          // console.log(question);
+    var numberOfQuestions = 30;
+    var player1Score = 0;
+    var player2Score = 0;
 
-          var correctAnswer = response.results["0"].correct_answer;
-          // console.log(correctAnswer)
+    // console.log(incorrectAnswer1)
+    // console.log(incorrectAnswer2)
+    // console.log(incorrectAnswer3)
+    // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    // console.log(choicesOrder)
 
-          var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
-          var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
-          var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
+    /////////////////////////////////////////////// RANDOM SHUFFLE
 
-          // console.log(incorrectAnswer1)
-          // console.log(incorrectAnswer2)
-          // console.log(incorrectAnswer3)
+    function shuffle(array) {
+      var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
-          // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-          // console.log(choicesOrder)
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
 
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
 
+      return array;
+    }
 
-          /////////////////////////////////////////////// RANDOM SHUFFLE
+    // Used like so
+    var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    arr = shuffle(choices);
+    // console.log(choices);
 
-          function shuffle(array) {
-            var currentIndex = array.length,
-              temporaryValue, randomIndex;
+    /////////////////////////////////////////////// END RANDOM SHUFFLE
 
-            // While there remain elements to shuffle...
-            while (0 !== currentIndex) {
-
-              // Pick a remaining element...
-              randomIndex = Math.floor(Math.random() * currentIndex);
-              currentIndex -= 1;
-
-              // And swap it with the current element.
-              temporaryValue = array[currentIndex];
-              array[currentIndex] = array[randomIndex];
-              array[randomIndex] = temporaryValue;
-            }
-
-            return array;
-          }
-
-          // Used like so
-          var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-          arr = shuffle(choices);
-          // console.log(choices);
-
-          /////////////////////////////////////////////// END RANDOM SHUFFLE
-
-
-
-
-          // Display Question
-
-          $("button").click(function() {
-            $("table").hide();
-            var questionDiv = $("<div>");
-            questionDiv.addClass("question");
-            questionDiv.html(response.results["0"].question);
-            $(".question").html(question);
-          });
-
-          // Display Answers
-
-          $("button").click(function() {
-
-            for (i = 0; i < choices.length; i++) {
-              list = "<li>" + choices[i] + "</li>";
-              $(".choices").append(list);
-              document.getElementById("choices").innerHTML = list;
-              list = "";
-
-              // var answersDiv = $("<div>");
-              // answersDiv.addClass("answers");
-              // answersDiv.html(choices);
-              // $(".choices").html(choices);
-            };
-          });
+    // Display Question and Choices on Click
+    $("button").click(function() {
+      $("table").hide();
+      var questionDiv = $("<div>");
+      questionDiv.addClass("question");
+      questionDiv.html(response.results["0"].question);
+      $(".question").html(question);
 
 
 
-        });
-      };
-      renderQuestion()
+      // // Display Answers
+      var options = [
+        choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+      ];
+
+      function makeUL(array) {
+        // Create the list element:
+        var list = document.createElement('ul');
+
+        for (var i = 0; i < array.length; i++) {
+          // Create the list item:
+          var item = document.createElement('li');
+
+          // Set its contents:
+          item.appendChild(document.createTextNode(array[i]));
+
+          // Add it to the list:
+          list.appendChild(item);
+        }
+
+        // Finally, return the constructed list:
+        return list;
+      }
+      // Display the choices
+      document.getElementById('choices-div').appendChild(makeUL(options[0]));
+
+    });
+  });
+};
+
+
+
+
+
+
+
+
+renderQuestion()
