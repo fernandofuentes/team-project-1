@@ -1,4 +1,4 @@
-console.log("firebase.js loaded");
+console.log("firebase.js loaded 1");
 
 // Initialize Firebase
   var config = {
@@ -67,7 +67,7 @@ console.log("firebase.js loaded");
     function foo(isCorrect){
       database.ref().push({
         //need authentication first
-        "clicked" : true;
+        "clicked" : true
 
 
         });
