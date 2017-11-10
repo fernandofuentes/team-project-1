@@ -49,16 +49,23 @@
 
 
 
-    <div class="row">
-      <div class="text-center col-md-4">
 
+
+
+
+
+
+
+    <!-- CHAT BOX AND GAME BOARD ROW -->
+    <div class="row">
+
+
+
+      <div class="text-center col-md-4">
         <!-- this is where our messages will be displayed -->
-        <div class="row text-center">
-          <div class="col-md-6">
-            <div id="chat-box" class="text-left well">
-            </div>
-          </div>
-        </div>
+        <div id="chat-box" class="text-left well"></div>
+
+
 
         <!-- form to input our user name -->
         <form id="name-form">
@@ -71,14 +78,17 @@
           <input type="text" placeholder="Enter message" id="message-input">
           <button id="message-submit">Send</button>
         </form>
-
       </div>
-    </div>
 
 
 
-    <!-- THE GAME BOARD -->
-    <div class="row">
+
+
+
+
+
+      <!-- THE GAME BOARD -->
+
       <div class="col-md-8">
         <table>
           <tr>
@@ -140,6 +150,11 @@
           </tbody>
         </table>
       </div>
+
+
+
+
+
     </div>
 
     <!-- Player Names and Scores -->
@@ -166,8 +181,6 @@
   <script src="assets/js/database.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/chat.js"></script>
-  <script src="assets/js/auth.js"></script>
-
 
 
 </body>
