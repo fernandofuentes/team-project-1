@@ -62,7 +62,18 @@
 
 
       <div class="text-center col-md-4">
+        <!-- Player Names and Scores -->
+        <div class="row">
+          <div>
+            <div id="player1" class="players col-md-12">Player 1</div>
+            <div id="player1Score" class="scores col-md-12">Score</div>
+            <div id="player2" class="players col-md-12">Player 2</div>
+            <div id="player2Score" class="scores col-md-12">Score</div>
+          </div>
+        </div>
+
         <!-- this is where our messages will be displayed -->
+        <div class = "row">
         <div id="chat-box" class="text-left well"></div>
 
 
@@ -79,7 +90,7 @@
           <button id="message-submit">Send</button>
         </form>
       </div>
-
+    </div>
 
 
 
@@ -159,14 +170,14 @@
     </div>
 
     <!-- Player Names and Scores -->
-    <div class="row">
+    <!-- <div class="row">
       <div class="fixed-bottom col-md-12">
         <div id="player1" class="players col-md-2">Player 1</div>
         <div id="player1Score" class="scores col-md-2">Score</div>
         <div id="player2" class="players col-md-2">Player 2</div>
         <div id="player2Score" class="scores col-md-2">Score</div>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -182,7 +193,8 @@
   <script src="assets/js/database.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/chat.js"></script>
-
+  <script src="assets/js/firebase.js"></script>
+  <script src="assets/js/auth.js"></script>
 
 </body>
 
