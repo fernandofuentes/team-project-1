@@ -1,4 +1,4 @@
-var a = 15
+var a = 16
 var b = 0
 
 console.log(a + b); //3 = true
