@@ -8,8 +8,8 @@ table {
 }
 
 th {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background-color: #F4C500;
   color: white;
   border-color: black;
@@ -21,8 +21,8 @@ th {
 }
 
 td {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background-color: white;
   color: #0069D9;
   border-color: black;
@@ -32,8 +32,8 @@ td {
 }
 
 .gameButton {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   background-color: white;
   color: #0069D9;
   border-color: black;
