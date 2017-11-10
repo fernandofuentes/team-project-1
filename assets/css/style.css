@@ -8,12 +8,12 @@ table {
 }
 
 th {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-color: #F4C500;
-  color: white;
+  color: black;
   border-color: black;
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
   border-width: thick;
@@ -21,24 +21,23 @@ th {
 }
 
 td {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-color: white;
   color: #0069D9;
   border-color: black;
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
-  /*border-width: thick;*/
 }
 
 button {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-color: white;
   color: #0069D9;
   border-color: black;
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
 }
@@ -75,10 +74,14 @@ h1 {
 }
 
 #chatbox {
+  padding: 20px;
+  font-family: 'Delius', cursive;
+  font-size: 20px;
   margin-left: 225px;
   height: 625px;
   width: 300px;
   border: 3px solid #0069D9;
   background-color: white;
   border-width: thick;
+  color: #0069D9;
 }

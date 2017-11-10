@@ -6,6 +6,7 @@
   letter-spacing: 2px;
   padding-left: 1em;
   padding-right: 1em;
+
 }
 
 /* Choices */
@@ -19,15 +20,15 @@ div#choices-div {
 }
 
 div#choices-div li {
-  background-color: yellow;
+  background-color: #F4C500;
   margin-bottom: 10px;
   padding: 13px;
   border-radius: 100px;
-  color: blue;
+  color: #0069D9;
   letter-spacing: 4px;
 }
 
 div#choices-div li:hover {
-  background-color: blue;
-  color: yellow;
+  background-color: #0069D9;
+  color: white;
 }
