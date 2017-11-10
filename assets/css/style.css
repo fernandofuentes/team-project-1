@@ -8,8 +8,8 @@ table {
 }
 
 th {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   background-color: #F4C500;
   color: white;
   border-color: black;
@@ -21,8 +21,8 @@ th {
 }
 
 td {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   background-color: white;
   color: #0069D9;
   border-color: black;
@@ -32,8 +32,8 @@ td {
 }
 
 .gameButton {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   background-color: white;
   color: #0069D9;
   border-color: black;
@@ -64,6 +64,14 @@ h1 {
   font-weight: 600;
 }
 
+/***************** FACEBOOK LOGIN STYLE ****************/
+
+.row.facebook-login-row {
+  text-align: center;
+}
+
+/***************** Chat Box STYLE **********************/
+
 .scores {
   text-align: center;
   border: 5px solid #F4C500;
@@ -74,12 +82,12 @@ h1 {
 }
 
 #chat-box {
-  padding: 20px;
+  padding: 7px;
   font-family: 'Delius', cursive;
-  font-size: 20px;
-  margin-left: 225px;
+  /* font-size: 20px; */
+  /* margin-left: 225px; */
   height: 300px;
-  width: 600px;
+  /* width: 600px; */
   border: 3px solid #0069D9;
   background-color: white;
   border-width: thick;
@@ -111,7 +119,6 @@ h1 {
   font-size: 30px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
-
 }
 
 #message-submit {
@@ -123,7 +130,6 @@ h1 {
   font-size: 30px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
-
 }
 
 #message-input {
@@ -167,10 +173,11 @@ h1 {
 }
 
 .loginBtn:active {
-  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Facebook */
+
 .loginBtn--facebook {
   background-color: #4C69BA;
   background-image: linear-gradient(#4C69BA, #3B55A0);
