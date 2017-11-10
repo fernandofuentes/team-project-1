@@ -10,8 +10,8 @@ table {
 th {
   width: 100px;
   height: 100px;
-  background-color: white;
-  color: #F4C500;
+  background-color: #F4C500;
+  color: white;
   border-color: black;
   font-size: 20px;
   font-family: 'Bangers', cursive;
@@ -24,19 +24,19 @@ td {
   width: 100px;
   height: 100px;
   background-color: white;
-  color: #F4C500;
+  color: #0069D9;
   border-color: black;
   font-size: 20px;
   font-family: 'Bangers', cursive;
   border: 2px solid #0069D9;
-  border-width: thick;
+  /*border-width: thick;*/
 }
 
 button {
   width: 100px;
   height: 100px;
   background-color: white;
-  color: #F4C500;
+  color: #0069D9;
   border-color: black;
   font-size: 20px;
   font-family: 'Bangers', cursive;
@@ -45,6 +45,7 @@ button {
 
 button:hover {
   background-color: #0069D9;
+  color: white;
 }
 
 body {
@@ -62,7 +63,6 @@ h1 {
   text-align: center;
   font-size: 100px;
   font-weight: 600;
-  /*text-indent: 180px;*/
 }
 
 .scores {
@@ -72,4 +72,13 @@ h1 {
   font-size: 25px;
   border-radius: 20px;
   font-family: 'Bangers', cursive;
+}
+
+#chatbox {
+  margin-left: 225px;
+  height: 625px;
+  width: 300px;
+  border: 3px solid #0069D9;
+  background-color: white;
+  border-width: thick;
 }
