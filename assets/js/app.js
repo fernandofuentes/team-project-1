@@ -65,7 +65,7 @@ function renderQuestion() {
 
     // Display Question and Choices on Click
     $(".gameButton").click(function() {
-      $("table").hide();
+      $("#chat-and-game").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
       questionDiv.html(response.results["0"].question);
