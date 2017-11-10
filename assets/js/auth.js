@@ -73,10 +73,11 @@ firebase.auth().getRedirectResult().then(function(result) {
 //     // An error happened.
 // });
 
-$("#login").on("click", function() {
+$(".loginBtn loginBtn--facebook").on("click", function() {
     firebase.auth().signInWithRedirect(provider);
+    console.log("login-worked!-B")
 
-    
+
 
 });
 
