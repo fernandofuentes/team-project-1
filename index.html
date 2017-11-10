@@ -17,154 +17,161 @@
 </head>
 
 <body>
+  <div class="container">
 
-  <div id="title">
-
-    <div class="container">
-      <h1 class="display-3">BRAIN JAM!</h1>
-    </div>
-  </div>
-
-  <br>
-  <br>
-<div class = "col-md-5">
-</div>
-
-  <div id = "facebook" class = "col-md-2">
-    <button class="loginBtn loginBtn--facebook">
-      Login with Facebook
-    </button>
-  </div>
-
-  <div class = "col-md-5">
-  </div>
-
-  <br>
-  <br>
-
-  <div id="questions" class="row question-popup-row">
-    <div class="col-md-12">
-      <div class="question-popup"></div>
-      <div class="question"></div>
-      <div id="choices-div">
-
-      </div>
-    </div>
-  </div>
-
-  <div style="margin: 0 auto;" class="row">
-
-    <div class="container text-center">
-
-      <!-- this is where our messages will be displayed -->
-      <div class="row text-center">
-        <div class="col-md-6">
-          <div id="chat-box" class="text-left well">
-          </div>
+    <!-- TITLE -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="title">
+          <h1>BRAIN JAM!</h1>
         </div>
       </div>
+    </div>
 
-      <br>
 
-      <!-- form to input our user name -->
-      <form id="name-form">
-        <input type="text" placeholder="Enter Name" id="name-input">
-        <button id="name-submit">Submit</button>
-      </form>
+    <!-- Facebook Login Button -->
+    <div class="row facebook-login-row">
+      <div class="col-md-12">
+        <button class="loginBtn loginBtn--facebook">Login with Facebook</button>
+        </di>
+      </div>
+    </div>
 
-      <!-- form to input our messages -->
-      <form id="message-form">
-        <input type="text" placeholder="Enter message" id="message-input">
-        <button id="message-submit">Send</button>
-      </form>
+
+    <!-- Questions and Answers PopUp -->
+    <div id="questions" class="row question-popup-row">
+      <div class="col-md-12">
+        <div class="question-popup"></div>
+        <div class="question"></div>
+        <div id="choices-div"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- CHAT BOX AND GAME BOARD ROW -->
+    <div class="row">
+
+
+
+      <div class="text-center col-md-4">
+        <!-- this is where our messages will be displayed -->
+        <div id="chat-box" class="text-left well"></div>
+
+
+
+        <!-- form to input our user name -->
+        <form id="name-form">
+          <input type="text" placeholder="Enter Name" id="name-input">
+          <button id="name-submit">Submit</button>
+        </form>
+
+        <!-- form to input our messages -->
+        <form id="message-form">
+          <input type="text" placeholder="Enter message" id="message-input">
+          <button id="message-submit">Send</button>
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+      <!-- THE GAME BOARD -->
+
+      <div class="col-md-8">
+        <table>
+          <tr>
+            <th>Category 1</th>
+            <th>category 2</th>
+            <th>Category 3</th>
+            <th>Category 4</th>
+            <th>Category 5</th>
+            <th>Category 6</th>
+          </tr>
+
+          <tbody id="gameGrid">
+
+            <tr>
+              <td><button class="gameButton easy">$100</button></td>
+              <td><button class="gameButton easy">$100</button></td>
+              <td><button class="gameButton easy">$100</button></td>
+              <td><button class="gameButton easy">$100</button></td>
+              <td><button class="gameButton easy">$100</button></td>
+              <td><button class="gameButton easy">$100</button></td>
+            </tr>
+
+            <tr>
+              <td><button class="gameButton easy">$200</button></td>
+              <td><button class="gameButton easy">$200</button></td>
+              <td><button class="gameButton easy">$200</button></td>
+              <td><button class="gameButton easy">$200</button></td>
+              <td><button class="gameButton easy">$200</button></td>
+              <td><button class="gameButton easy">$200</button></td>
+            </tr>
+
+            <tr>
+              <td><button class="gameButton medium">$300</button></td>
+              <td><button class="gameButton medium">$300</button></td>
+              <td><button class="gameButton medium">$300</button></td>
+              <td><button class="gameButton medium">$300</button></td>
+              <td><button class="gameButton medium">$300</button></td>
+              <td><button class="gameButton medium">$300</button></td>
+            </tr>
+
+            <tr>
+              <td><button class="gameButton hard">$400</button></td>
+              <td><button class="gameButton hard">$400</button></td>
+              <td><button class="gameButton hard">$400</button></td>
+              <td><button class="gameButton hard">$400</button></td>
+              <td><button class="gameButton hard">$400</button></td>
+              <td><button class="gameButton hard">$400</button></td>
+            </tr>
+
+            <tr>
+              <td><button class="gameButton hard">$500</button></td>
+              <td><button class="gameButton hard">$500</button></td>
+              <td><button class="gameButton hard">$500</button></td>
+              <td><button class="gameButton hard">$500</button></td>
+              <td><button class="gameButton hard">$500</button></td>
+              <td><button class="gameButton hard">$500</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+
 
 
     </div>
 
-    <div class="col-md-6">
-      <table>
-        <tr>
-          <th>Category 1</th>
-          <th>category 2</th>
-          <th>Category 3</th>
-          <th>Category 4</th>
-          <th>Category 5</th>
-          <th>Category 6</th>
-        </tr>
-        <tbody id="gameGrid">
-
-          <tr>
-            <td><button class = "gameButton easy">$100</button></td>
-            <td><button class = "gameButton easy" >$100</button></td>
-            <td><button class = "gameButton easy">$100</button></td>
-            <td><button class = "gameButton easy">$100</button></td>
-            <td><button class = "gameButton easy">$100</button></td>
-            <td><button class = "gameButton easy">$100</button></td>
-          </tr>
-
-          <tr>
-            <td><button class = "gameButton easy">$200</button></td>
-            <td><button class = "gameButton easy">$200</button></td>
-            <td><button class = "gameButton easy">$200</button></td>
-            <td><button class = "gameButton easy">$200</button></td>
-            <td><button class = "gameButton easy">$200</button></td>
-            <td><button class = "gameButton easy">$200</button></td>
-          </tr>
-
-          <tr>
-            <td><button class = "gameButton medium">$300</button></td>
-            <td><button class = "gameButton medium">$300</button></td>
-            <td><button class = "gameButton medium">$300</button></td>
-            <td><button class = "gameButton medium">$300</button></td>
-            <td><button class = "gameButton medium">$300</button></td>
-            <td><button class = "gameButton medium">$300</button></td>
-          </tr>
-
-          <tr>
-            <td><button class = "gameButton hard">$400</button></td>
-            <td><button class = "gameButton hard">$400</button></td>
-            <td><button class = "gameButton hard">$400</button></td>
-            <td><button class = "gameButton hard">$400</button></td>
-            <td><button class = "gameButton hard">$400</button></td>
-            <td><button class = "gameButton hard">$400</button></td>
-          </tr>
-
-          <tr>
-            <td><button class = "gameButton hard">$500</button></td>
-            <td><button class = "gameButton hard">$500</button></td>
-            <td><button class = "gameButton hard">$500</button></td>
-            <td><button class = "gameButton hard">$500</button></td>
-            <td><button class = "gameButton hard">$500</button></td>
-            <td><button class = "gameButton hard">$500</button></td>
-          </tr>
-
-        </tbody>
-      </table>
+    <!-- Player Names and Scores -->
+    <div class="row">
+      <div class="fixed-bottom col-md-12">
+        <div id="player1" class="players col-md-2">Player 1</div>
+        <div id="player1Score" class="scores col-md-2">Score</div>
+        <div id="player2" class="players col-md-2">Player 2</div>
+        <div id="player2Score" class="scores col-md-2">Score</div>
+      </div>
     </div>
+
+
+
+
   </div>
-  <br>
-  <br>
 
-
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="fixed-bottom col-md-8">
-      <div id="player1" class="players col-md-2">Player 1</div>
-      <div id="player1Score" class="scores col-md-2">Score</div>
-      <div id="player2" class="players col-md-2">Player 2</div>
-      <div id="player2Score" class="scores col-md-2">Score</div>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
   <!-- JavaScript Files -->
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -174,7 +181,6 @@
   <script src="assets/js/database.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/chat.js"></script>
-  <script src="assets/js/auth.js"></script>
 
 
 </body>
