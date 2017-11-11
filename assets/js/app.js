@@ -34,6 +34,7 @@ function renderQuestion() {
     // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
     // console.log(choicesOrder)
 
+
     /////////////////////////////////////////////// RANDOM SHUFFLE
 
     function shuffle(array) {
@@ -65,7 +66,7 @@ function renderQuestion() {
 
     // Display Question and Choices on Click
     $(".gameButton").click(function() {
-      $("#chat-and-game").hide();
+      // $("#chat-and-game").hide();
       var questionDiv = $("<div>");
       questionDiv.addClass("question");
       questionDiv.html(response.results["0"].question);
@@ -73,7 +74,7 @@ function renderQuestion() {
 
 
 
-      // // Display Answers
+      // Display Answers
       var options = [
         choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
       ];
@@ -96,18 +97,15 @@ function renderQuestion() {
         // Finally, return the constructed list:
         return list;
       }
+
       // Display the choices
       document.getElementById('choices-div').appendChild(makeUL(options[0]));
-
+      $('.gameButton').prop('onclick', null).off('click');
     });
+
+
+
   });
 }
-
-
-
-
-
-
-
 
 renderQuestion();
