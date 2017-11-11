@@ -8,8 +8,7 @@ $("#startBtn").on("click", function() {
 });
 
 var numberOfQuestions = 30;
-var player1Score = 0;
-var player2Score = 0;
+var currentScore = "";
 
 // The Function that renders the Question with Answer Choices
 var question = $(this).attr("data-name");

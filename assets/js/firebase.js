@@ -24,47 +24,6 @@ var playerOneExists = false;
 var playerTwoExists = false;
 var playerOneData = null;
 var playerTwoData = null;
-var currentScore = "";
-
-var queryURL = //API
-
-  // performing our GET request
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-
-  // after the data request
-  .done(function(response) {
-    //console.log(response);// change this to 'results?'
-
-    //storing the array of results in the variable
-    var results = response.data;
-    console.log(results);
-
-  });
-
-//each square is a point value with an on click button that triggers a question
-$("tbody").on("click", function(event) {
-  console.log(event);
-
-  $(this).attr("da", true);
-
-  //data-button = True;
-
-  //if its true it can not be cliked again
-
-  foo(false);
-});
-
-function foo(isCorrect) {
-  database.ref("/clicks").push({
-    //need authentication first
-    "clicked": true
-
-  });
-
-}
 
 //auth js File
 
