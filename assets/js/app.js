@@ -57,7 +57,7 @@ function renderQuestion() {
     }
 
     // Used like so
-    var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+    var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     arr = shuffle(choices);
     // console.log(choices);
 
@@ -101,7 +101,7 @@ function renderQuestion() {
 
     });
   });
-};
+}
 
 
 
@@ -110,4 +110,4 @@ function renderQuestion() {
 
 
 
-renderQuestion()
+renderQuestion();
