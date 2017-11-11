@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 3");
+console.log("firebase.js loaded 4");
 
 // Initialize Firebase
 // Initialize Firebase
