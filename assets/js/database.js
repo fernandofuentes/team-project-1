@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
@@ -15,8 +9,7 @@
   };
   firebase.initializeApp(config);
 
-
-  var database = firebase.database();
+var database = firebase.database();
 
 var chatData = database.ref("/chat");
 var playersRef = database.ref("players");
@@ -51,19 +44,19 @@ var queryURL = //API
           //storing the array of results in the variable
           var results = response.data;
           console.log(results);
-          
+
 });
 
 //each square is a point value with an on click button that triggers a question
   $("tbody").on("click", function(event){
       console.log(event);
-      
+
       $(this).attr("da", true);
 
       //data-button = True;
-    
+
 //if its true it can not be cliked again
-        
+
       foo(false)
   }
 
@@ -72,7 +65,7 @@ var queryURL = //API
       //need authentication first
       "clicked" : true;
 
-        
+
       });
 
   }
@@ -88,7 +81,7 @@ var queryURL = //API
 
 // link trivia questions from openTBD.com API to each value squares
 
-// display 
+// display
 
 // be able to add to a player score with a correct anwser.
 
@@ -97,6 +90,3 @@ var queryURL = //API
 // ablity to reset game at end
 
 // eliminating values from grid as they are being anwsered.
-
-
-
