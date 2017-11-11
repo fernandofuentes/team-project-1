@@ -1,16 +1,16 @@
-console.log("firebase.js loaded 4");
+console.log("firebase.js loaded ");
 
 // Initialize Firebase
+// Initialize Firebase
 var config = {
-  apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
-  authDomain: "team2project1-3fe10.firebaseapp.com",
-  databaseURL: "https://team2project1-3fe10.firebaseio.com",
-  projectId: "team2project1-3fe10",
-  storageBucket: "",
-  messagingSenderId: "334658935081"
+  apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
+  authDomain: "chat-test-56e7c.firebaseapp.com",
+  databaseURL: "https://chat-test-56e7c.firebaseio.com",
+  projectId: "chat-test-56e7c",
+  storageBucket: "chat-test-56e7c.appspot.com",
+  messagingSenderId: "1003382859041"
 };
 firebase.initializeApp(config);
-
 
 var database = firebase.database();
 
