@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 1");
+console.log("firebase.js loaded 2");
 
 // Initialize Firebase
   var config = {
@@ -204,7 +204,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 //     // An error happened.
 // });
 
-$(".loginBtn loginBtn--facebook").on("click", function() {
+$("facebookBtn").on("click", function() {
     firebase.auth().signInWithRedirect(provider);
     console.log("login-worked!-B")
 
