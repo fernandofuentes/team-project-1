@@ -1,4 +1,4 @@
-console.log("firebase.js loaded ");
+console.log("firebase.js loaded 7");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -16,6 +16,7 @@ var database = firebase.database();
 
 //begin database js File
 var chatData = database.ref("/chat");
+var loginData = database.ref("/login");
 var playersRef = database.ref("players");
 var currentTurnRef = database.ref("turn");
 var username = "Guest";
@@ -61,7 +62,7 @@ $("tbody").on("click", function(event) {
 });
 
 function foo(isCorrect) {
-  database.ref().push({
+  database.ref(/"clicks").push({
     //need authentication first
     "clicked": true
 
@@ -145,7 +146,6 @@ chatData.orderByChild("time").on("child_added", function(snapshot) {
 
 //auth js File
 // var database = firebase.database();
-var loginData = database.ref("/login");
 
 var provider = new firebase.auth.FacebookAuthProvider();
 var displayName = ""
@@ -178,7 +178,7 @@ firebase.auth().getRedirectResult().then(function(result) {
   }
   // The signed-in user info.
   var user = result.user;
-  console.log(user)
+  console.log(user);
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -201,7 +201,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 //     // An error happened.
 // });
 
-$("#login").on("click", function() {
+$("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
 
 
