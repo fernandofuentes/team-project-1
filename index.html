@@ -28,11 +28,9 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row startBtnRow">
       <div class="col-md-12">
-        <div id="start">
-          <button id = "startBtn">START</button>
-        </div>
+        <button id="startBtn">START</button>
       </div>
     </div>
 
@@ -54,37 +52,37 @@
       </div>
     </div>
 
-    <!-- CHAT BOX AND GAME BOARD ROW -->
-    <div id="chat-and-game" class="row">
-      <div class="text-center col-md-4">
-        <!-- Player Names and Scores -->
+    <div class = "row scoreRow">
+      <!-- Player Name and Score -->
+      <div>
+        <div id="player1" class="players col-md-12">Player</div>
+        <div id="player1Score" class="scores col-md-12">Score</div>
+        <!-- <div id="player2" class="players col-md-12">Player 2</div>
+          <div id="player2Score" class="scores col-md-12">Score</div> -->
+      </div>
+</div>
 
-        <div>
-          <div id="player1" class="players col-md-12">Player 1</div>
-          <div id="player1Score" class="scores col-md-12">Score</div>
-          <div id="player2" class="players col-md-12">Player 2</div>
-          <div id="player2Score" class="scores col-md-12">Score</div>
-        </div>
+      <!-- this is where our messages will be displayed -->
+      <!-- <div id="chat-box" class="text-left well"></div> -->
 
-
-        <!-- this is where our messages will be displayed -->
-        <!-- <div id="chat-box" class="text-left well"></div> -->
-
-        <!-- form to input our user name -->
-        <!-- <form id="name-form">
+      <!-- form to input our user name -->
+      <!-- <form id="name-form">
           <input type="text" placeholder="Enter Name" id="name-input">
           <button id="name-submit">Submit</button>
         </form> -->
 
-        <!-- form to input our messages -->
-        <!-- <form id="message-form">
+      <!-- form to input our messages -->
+      <!-- <form id="message-form">
           <input type="text" placeholder="Enter message" id="message-input">
           <button id="message-submit">Send</button>
         </form>
       </div> -->
 
+      <!-- GAME BOARD ROW -->
+      <div class="row gameRow">
+
       <!-- THE GAME BOARD -->
-      <div class="col-md-8">
+      <div class="col-md-12">
         <table>
           <tbody id="gameGrid">
             <tr>
@@ -139,20 +137,19 @@
         </table>
       </div>
     </div>
-  </div>
 
 
 
-  <!-- JavaScript Files -->
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-  <script src="assets/js/database.js"></script>
-  <script src="assets/js/app.js"></script>
-  <!-- <script src="assets/js/chat.js"></script> -->
-  <script src="assets/js/firebase.js"></script>
-  <!-- <script src="assets/js/auth.js"></script> -->
+    <!-- JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!-- <script src="assets/js/chat.js"></script> -->
+    <script src="assets/js/firebase.js"></script>
+    <!-- <script src="assets/js/auth.js"></script> -->
 
 </body>
 
