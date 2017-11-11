@@ -212,6 +212,7 @@ $("#facebookBtn").on("click", function() {
 
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
+    $("#player1").html("Player Name")
     $("#facebookBtn").show();
     $("#logOffFacebook").hide();
 
