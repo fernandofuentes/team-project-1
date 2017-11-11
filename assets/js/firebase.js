@@ -201,12 +201,13 @@ firebase.auth().signOut().then(function() {
 });
 
 //log on and log off button on click events
-//$("#logOffFacebook").hide();
 
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
   $("#facebookBtn").hide();
   $("#logOffFacebook").show();
+  $("#player1").append(displayName)
+
 });
 
 $("#logOffFacebook").on("click", function() {
