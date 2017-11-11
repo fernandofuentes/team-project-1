@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 2");
+console.log("firebase.js loaded 4");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -158,10 +158,11 @@ firebase.auth().getRedirectResult().then(function(result) {
     // ...
     console.log(token);
     displayName = result.user.displayName;
+    $("#player1").html(displayName);
+
 
     console.log(displayName);
     console.log("connected to Facebook");
-    $("#displayNameTest").append(displayName);
 
 
     var loginObj = {
@@ -208,8 +209,6 @@ $("#facebookBtn").on("click", function() {
   $("#logOffFacebook").show();
 
 });
-
-$("#player1").html(displayName);
 
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
