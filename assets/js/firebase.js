@@ -264,7 +264,7 @@ $.ajax({
 
 $.ajax({
     url: mediumURL,
-    method: “GET”
+    method: "GET"
   })
 
   // after the data request
@@ -273,12 +273,12 @@ $.ajax({
 
     //storing the array of results in the variable
     var results = response.results;
-    console.log(“medium” + JSON.stringify(results));
+    console.log("medium" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
       console.log(results[i].question);
-      var button = $(“button”)
-      button.attr(“data - question”, results[i].question)
+      var button = $("gameButton")
+      button.attr("data - question", results[i].question)
 
       console.log(results[i].correct_answer);
 
@@ -287,7 +287,7 @@ $.ajax({
 
 $.ajax({
     url: hardURL,
-    method: “GET”
+    method: "GET"
   })
 
   // after the data request
@@ -296,12 +296,12 @@ $.ajax({
 
     //storing the array of results in the variable
     var results = response.results;
-    console.log(“hard” + JSON.stringify(results));
+    console.log("hard" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
       console.log(results[i].question);
-      var button = $(“button”)
-      button.attr(“data - question”, results[i].question)
+      var button = $("gameButton")
+      button.attr("data - question", results[i].question)
 
       console.log(results[i].correct_answer);
 
