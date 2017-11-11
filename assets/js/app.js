@@ -80,8 +80,6 @@ $.ajax({
     questionDiv.html(response.results["0"].question);
     $(".question").html(question);
 
-
-
     // Display Answers
     var options = [
       choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
@@ -101,6 +99,7 @@ $.ajax({
         // Add it to the list:
         list.appendChild(item);
       }
+
       // Finally, return the constructed list:
       return list;
     }
