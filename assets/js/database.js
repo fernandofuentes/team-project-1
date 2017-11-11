@@ -64,8 +64,7 @@ function foo(isCorrect) {
 
   database.ref().push(); {
     //need authentication first
-    "clicked";
-    true
+    clicked: true;
   }
 
 }
