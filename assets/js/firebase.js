@@ -209,6 +209,8 @@ $("#facebookBtn").on("click", function() {
 
 });
 
+$("#player1").html(displayName);
+
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
     $("#facebookBtn").show();
@@ -222,4 +224,3 @@ $("#logOffFacebook").on("click", function() {
   });
 
 });
-$("#player1").append(displayName)
