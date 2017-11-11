@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 7");
+console.log("firebase.js loaded 8");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -195,11 +195,11 @@ firebase.auth().getRedirectResult().then(function(result) {
 
 
 
-// firebase.auth().signOut().then(function() {
-//     // Sign-out successful.
-// }).catch(function(error) {
-//     // An error happened.
-// });
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
 
 $("#facebookBtn").on("click", function() {
   $("#facebookBtn").hide();
@@ -210,11 +210,16 @@ $("#facebookBtn").on("click", function() {
 
 });
 
+<<<<<<< HEAD
 $("#logout").on("click", function() {
   $("#logOffFacebook").hide();
   $("#facebookBtn").show();
+=======
+$("#logOffFacebook").on("click", function() {
+>>>>>>> cba25ffe82f61bbe459989832a895516f2876fa5
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
+    console.log("signed out of FB")
   }).catch(function(error) {
     // An error happened.
   })
