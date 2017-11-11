@@ -210,7 +210,7 @@ $("#facebookBtn").on("click", function() {
 
 });
 
-$("#logout").on("click", function() {
+$("#logOffFacebook").on("click", function() {
   $("#logOffFacebook").hide();
   $("#facebookBtn").show();
   firebase.auth().signOut().then(function() {
