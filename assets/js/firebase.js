@@ -1,4 +1,5 @@
-// Initialize Firebase
+console.log("firebase.js loaded 5");
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -13,11 +14,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //begin database js File
-var chatData = database.ref("/chat");
 var loginData = database.ref("/login");
 var playersRef = database.ref("players");
 var currentTurnRef = database.ref("turn");
-var username = "Guest";
 var currentPlayers = null;
 var currentTurn = null;
 var playerNum = false;
@@ -27,8 +26,6 @@ var playerOneData = null;
 var playerTwoData = null;
 
 var queryURL = //API
-
-  //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
 
   // performing our GET request
   $.ajax({
@@ -222,88 +219,3 @@ $("#logOffFacebook").on("click", function() {
   });
 
 });
-
-var easyURL = 'https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple';
-
-var mediumURL = 'https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple';
-
-var hardURL = 'https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple';
-
-//FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
-
-
-
-
-
-
-
-
-
-// performing our GET request
-$.ajax({
-    url: easyURL,
-    method: "GET"
-  })
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("easy" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
-
-$.ajax({
-    url: mediumURL,
-    method: "GET"
-  })
-
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("medium" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
-
-$.ajax({
-    url: hardURL,
-    method: "GET"
-  })
-
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("hard" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
