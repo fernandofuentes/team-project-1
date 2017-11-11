@@ -43,7 +43,7 @@ console.log("firebase.js loaded 1");
 
         // after the data request
           .done(function(response) {
-            console.log(response);
+            //console.log(response);// change this to 'results?'
 
             //storing the array of results in the variable
             var results = response.data;
