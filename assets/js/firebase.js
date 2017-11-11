@@ -202,6 +202,8 @@ firebase.auth().getRedirectResult().then(function(result) {
 // });
 
 $("#facebookBtn").on("click", function() {
+  $("#facebookBtn").hide();
+  $("#logOffFacebook").show();
   firebase.auth().signInWithRedirect(provider);
 
 
@@ -209,6 +211,8 @@ $("#facebookBtn").on("click", function() {
 });
 
 $("#logout").on("click", function() {
+  $("#logOffFacebook").hide();
+  $("#facebookBtn").show();
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
   }).catch(function(error) {
