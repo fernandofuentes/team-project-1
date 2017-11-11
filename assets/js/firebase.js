@@ -201,6 +201,8 @@ firebase.auth().signOut().then(function() {
   // An error happened.
 });
 
+$("#logOffFacebook").hide();
+
 $("#facebookBtn").on("click", function() {
   $("#logOffFacebook").show();
   firebase.auth().signInWithRedirect(provider);
