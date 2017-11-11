@@ -74,6 +74,7 @@ $.ajax({
 
   // Display Question and Choices on Click
   $(".gameButton").click(function() {
+    $(this).hide();
     $(".gameRow").hide();
     var questionDiv = $("<div>");
     questionDiv.addClass("question");
