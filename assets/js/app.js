@@ -1,9 +1,10 @@
 // This hides The Game until the Start Button is Clicked On
-$("#theGame").hide();
+$(".gameRow").hide();
 
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
-  $("#theGame").show();
+  $(".gameRow").show();
+  $("#startBtn").hide();
 });
 
 // The Function that renders the Question with Answer Choices
