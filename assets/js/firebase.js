@@ -62,7 +62,7 @@ $("tbody").on("click", function(event) {
 });
 
 function foo(isCorrect) {
-  database.ref(/"clicks").push({
+  database.ref("/clicks").push({
     //need authentication first
     "clicked": true
 
