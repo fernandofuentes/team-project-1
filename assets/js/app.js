@@ -74,7 +74,7 @@ $.ajax({
 
   // Display Question and Choices on Click
   $(".gameButton").click(function() {
-    $("#chat-and-game").hide();
+    $(".gameRow").hide();
     var questionDiv = $("<div>");
     questionDiv.addClass("question");
     questionDiv.html(response.results["0"].question);
