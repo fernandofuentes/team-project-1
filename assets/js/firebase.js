@@ -205,6 +205,7 @@ $("#facebookBtn").on("click", function() {
   $("#facebookBtn").hide();
   $("#logOffFacebook").show();
   firebase.auth().signInWithRedirect(provider);
+  $("#facebookBtn").hide();
 
 
 
