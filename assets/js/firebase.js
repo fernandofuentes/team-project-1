@@ -95,7 +95,7 @@ function foo(isCorrect) {
 
 //begin chat js
 var chatData = database.ref("/chat");
-var username = "Guest";
+var username = displayName;
 
 
 // name-submit on click.
