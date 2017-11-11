@@ -108,4 +108,6 @@ function renderQuestion() {
   });
 }
 
+console.log();
+
 renderQuestion();
