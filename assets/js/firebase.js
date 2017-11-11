@@ -1,4 +1,4 @@
-console.log("firebase.js loaded ");
+console.log("firebase.js loaded 7");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -16,6 +16,7 @@ var database = firebase.database();
 
 //begin database js File
 var chatData = database.ref("/chat");
+var loginData = database.ref("/login");
 var playersRef = database.ref("players");
 var currentTurnRef = database.ref("turn");
 var username = "Guest";
@@ -61,7 +62,7 @@ $("tbody").on("click", function(event) {
 });
 
 function foo(isCorrect) {
-  database.ref().push({
+  database.ref(/"clicks").push({
     //need authentication first
     "clicked": true
 
@@ -144,22 +145,25 @@ chatData.orderByChild("time").on("child_added", function(snapshot) {
 });
 
 //auth js File
-var loginData = database.ref("/login");
+// var database = firebase.database();
 
 var provider = new firebase.auth.FacebookAuthProvider();
-var displayName = "";
+var displayName = ""
+
+// firebase.auth().signInWithRedirect(provider);
 
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
     // ...
-    console.log(result);
-    displayName = result.user.displayName;
+    console.log(token)
+    displayName = result.user.displayName
 
-    console.log(displayName);
-    console.log("connected to Facebook");
-    //$("#displayNameTest").append(displayName)
+    console.log(displayName)
+    console.log("connected to Facebook")
+    $("#displayNameTest").append(displayName)
+
 
     var loginObj = {
       name: displayName,
@@ -183,8 +187,8 @@ firebase.auth().getRedirectResult().then(function(result) {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
-  console.log("error code: " + errorCode);
-  console.log("error message: " + errorMessage);
+  console.log("error code: " + errorCode)
+  console.log("error message: " + errorMessage)
 
   // ...
 });
@@ -197,9 +201,8 @@ firebase.auth().getRedirectResult().then(function(result) {
 //     // An error happened.
 // });
 
-$("facebookBtn").on("click", function() {
+$("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
-  console.log("login-worked!-B");
 
 
 
@@ -210,8 +213,5 @@ $("#logout").on("click", function() {
     // Sign-out successful.
   }).catch(function(error) {
     // An error happened.
-  });
+  })
 });
-
-//write display name to chatbox
-// $("#").
