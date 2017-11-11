@@ -1,22 +1,15 @@
-
-
-
-
-
-
 // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
-    authDomain: "team2project1-3fe10.firebaseapp.com",
-    databaseURL: "https://team2project1-3fe10.firebaseio.com",
-    projectId: "team2project1-3fe10",
-    storageBucket: "",
-    messagingSenderId: "334658935081"
-  };
-  firebase.initializeApp(config);
+var config = {
+  apiKey: "AIzaSyA0zoYjv-nCRcA6ckZyE3xy2To5_RoSQvM",
+  authDomain: "team2project1-3fe10.firebaseapp.com",
+  databaseURL: "https://team2project1-3fe10.firebaseio.com",
+  projectId: "team2project1-3fe10",
+  storageBucket: "",
+  messagingSenderId: "334658935081"
+};
+//firebase.initializeApp(config);
 
-
-  var database = firebase.database();
+var database = firebase.database();
 
 var chatData = database.ref("/chat");
 var playersRef = database.ref("players");
@@ -36,22 +29,31 @@ var mediumURL = "https://opentdb.com/api.php?amount=6&category=9&difficulty=medi
 
 var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple";
 
-      //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
+  //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
 
 
 
 
 
+<<<<<<< HEAD
    // performing our GET request
       $.ajax({
           url: easyURL,
           method: "GET"
         })
+=======
+  // performing our GET request
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+>>>>>>> upstream/master
 
-      // after the data request
-        .done(function(response) {
-          console.log(response);
+  // after the data request
+  .done(function(response) {
+    console.log(response);
 
+<<<<<<< HEAD
           //storing the array of results in the variable
           var results = response.results;
           console.log("easy"+JSON.stringify(results));
@@ -367,6 +369,38 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 //         playerNum = 1;
 //       }
 
+=======
+    //storing the array of results in the variable
+    var results = response.data;
+    console.log(results);
+
+  });
+
+//each square is a point value with an on click button that triggers a question
+$("tbody").on("click", function(event) {
+  console.log(event);
+
+  $(this).attr("da", true);
+
+  //data-button = True;
+
+  //if its true it can not be cliked again
+
+  foo(false);
+});
+
+function foo(isCorrect) {
+
+  database.ref().push(); {
+    //need authentication first
+    clicked: true;
+  }
+
+}
+
+//DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
+//EASY/NORMAL/ HARD
+>>>>>>> upstream/master
 
 
 
@@ -422,7 +456,11 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 
 
 
+<<<<<<< HEAD
 // // // //info to store in firebase
+=======
+// display
+>>>>>>> upstream/master
 
 // // // values of jeopardy grid
 
@@ -430,6 +468,7 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 
 // // // display 
 
+<<<<<<< HEAD
 // // // be able to add to a player score with a correct anwser.
 
 // // // be able to subtract from a player's score with an incorrect anwser.
@@ -438,3 +477,6 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 
 // // // eliminating values from grid as they are being anwsered.
 //   }
+=======
+// eliminating values from grid as they are being anwsered.
+>>>>>>> upstream/master
