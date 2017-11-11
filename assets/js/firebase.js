@@ -1,4 +1,5 @@
-// Initialize Firebase
+console.log("firebase.js loaded 5");
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -13,11 +14,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //begin database js File
-var chatData = database.ref("/chat");
 var loginData = database.ref("/login");
 var playersRef = database.ref("players");
 var currentTurnRef = database.ref("turn");
-var username = "Guest";
 var currentPlayers = null;
 var currentTurn = null;
 var playerNum = false;
@@ -25,10 +24,9 @@ var playerOneExists = false;
 var playerTwoExists = false;
 var playerOneData = null;
 var playerTwoData = null;
+var currentScore = "";
 
 var queryURL = //API
-
-  //FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
 
   // performing our GET request
   $.ajax({
@@ -64,90 +62,14 @@ function foo(isCorrect) {
     //need authentication first
     "clicked": true
 
-
   });
 
 }
 
-//DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
-//EASY/NORMAL/ HARD
-
-
-
-// //info to store in firebase
-
-// values of jeopardy grid
-
-// link trivia questions from openTBD.com API to each value squares
-
-// display
-
-// be able to add to a player score with a correct anwser.
-
-// be able to subtract from a player's score with an incorrect anwser.
-
-// ablity to reset game at end
-
-// eliminating values from grid as they are being anwsered.
-
-
-//begin chat js
-// var chatData = database.ref("/chat");
-
-
-// name-submit on click.
-// $('#name-submit').on("click", function(event) {
-//   event.preventDefault();
-//
-//   username = $("#name-input").val().trim();
-//
-//   console.log("username:", username);
-//
-//   $('#name-form').hide(); // hide name form
-//   $('#message-form').css("display", "initial"); // shows message form
-//
-// });
-
-
-//message-sumbit on click
-// $('#message-submit').on("click", function(event) {
-//
-//   event.preventDefault();
-//   var message = $("#message-input").val().trim();
-//
-//   $("#message-input").val(''); // clears out message input box
-//
-//   // this creates an object with our data to push up to firebase
-//   var messageObj = {
-//     name: username,
-//     message: message,
-//     time: firebase.database.ServerValue.TIMESTAMP
-//   };
-//
-//   console.log(messageObj);
-//
-//   chatData.push(messageObj);
-//
-// });
-
-
-// Update chat on screen when new message detected - ordered by 'time' value
-// chatData.orderByChild("time").on("child_added", function(snapshot) {
-//
-//   $("#chat-box").append("<p>" + snapshot.val().name + "> " + snapshot.val().message + "</p>");
-//
-//   // Keeps div scrolled to bottom on each update.
-//   $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
-//
-// });
-
 //auth js File
-// var database = firebase.database();
 
 var provider = new firebase.auth.FacebookAuthProvider();
 var displayName = "";
-
-// firebase.auth().signInWithRedirect(provider);
 
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
@@ -157,7 +79,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log(token);
     displayName = result.user.displayName;
     $("#player1").html(displayName);
-
 
     console.log(displayName);
     console.log("connected to Facebook");
@@ -191,8 +112,6 @@ firebase.auth().getRedirectResult().then(function(result) {
   // ...
 });
 
-
-
 firebase.auth().signOut().then(function() {
   // Sign-out successful.
 }).catch(function(error) {
@@ -210,7 +129,7 @@ $("#facebookBtn").on("click", function() {
 
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
-    $("#player1").html("Player Name")
+    $("#player1").html("Player Name");
     $("#facebookBtn").show();
     $("#logOffFacebook").hide();
 
@@ -222,88 +141,3 @@ $("#logOffFacebook").on("click", function() {
   });
 
 });
-
-var easyURL = 'https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple';
-
-var mediumURL = 'https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple';
-
-var hardURL = 'https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple';
-
-//FIREBASE FOR AUTHENTICATION (NEW TECH AS WELL)
-
-
-
-
-
-
-
-
-
-// performing our GET request
-$.ajax({
-    url: easyURL,
-    method: "GET"
-  })
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("easy" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
-
-$.ajax({
-    url: mediumURL,
-    method: "GET"
-  })
-
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("medium" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
-
-$.ajax({
-    url: hardURL,
-    method: "GET"
-  })
-
-  // after the data request
-  .done(function(response) {
-    console.log(response);
-
-    //storing the array of results in the variable
-    var results = response.results;
-    console.log("hard" + JSON.stringify(results));
-
-    for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var button = $("gameButton")
-      button.attr("data - question", results[i].question)
-
-      console.log(results[i].correct_answer);
-
-    }
-  });
