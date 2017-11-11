@@ -95,7 +95,7 @@ function foo(isCorrect) {
 
 //begin chat js
 var chatData = database.ref("/chat");
-var username = "Guest";
+var username = displayName;
 
 
 // name-submit on click.
@@ -148,7 +148,7 @@ chatData.orderByChild("time").on("child_added", function(snapshot) {
 // var database = firebase.database();
 
 var provider = new firebase.auth.FacebookAuthProvider();
-var displayName = ""
+var displayName = "";
 
 // firebase.auth().signInWithRedirect(provider);
 
@@ -157,12 +157,12 @@ firebase.auth().getRedirectResult().then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
     // ...
-    console.log(token)
-    displayName = result.user.displayName
+    console.log(token);
+    displayName = result.user.displayName;
 
-    console.log(displayName)
-    console.log("connected to Facebook")
-    $("#displayNameTest").append(displayName)
+    console.log(displayName);
+    console.log("connected to Facebook");
+    $("#displayNameTest").append(displayName);
 
 
     var loginObj = {
@@ -187,8 +187,8 @@ firebase.auth().getRedirectResult().then(function(result) {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
-  console.log("error code: " + errorCode)
-  console.log("error message: " + errorMessage)
+  console.log("error code: " + errorCode);
+  console.log("error message: " + errorMessage);
 
   // ...
 });
@@ -211,8 +211,8 @@ $("#facebookBtn").on("click", function() {
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
-    console.log("signed out of FB")
+    console.log("signed out of FB");
   }).catch(function(error) {
     // An error happened.
-  })
+  });
 });

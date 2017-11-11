@@ -25,21 +25,21 @@ var displayName = ""
 // firebase.auth().signInWithRedirect(provider);
 
 firebase.auth().getRedirectResult().then(function(result) {
-    if (result.credential) {
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        var token = result.credential.accessToken;
-        // ...
-        console.log(token)
-        displayName = result.user.displayName
+  if (result.credential) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    // ...
+    console.log(token)
+    displayName = result.user.displayName
 
-        console.log(displayName)
-        console.log("connected to Facebook")
-        $("#displayNameTest").append(displayName)
+    console.log(displayName)
+    console.log("connected to Facebook")
+    $("#displayNameTest").append(displayName)
 
 
-        var loginObj = {
-        name: displayName,
-        time: firebase.database.ServerValue.TIMESTAMP
+    var loginObj = {
+      name: displayName,
+      time: firebase.database.ServerValue.TIMESTAMP
 
     };
 
@@ -47,22 +47,22 @@ firebase.auth().getRedirectResult().then(function(result) {
 
     loginData.push(loginObj);
 
-    }
-    // The signed-in user info.
-    var user = result.user;
-    console.log(user)
+  }
+  // The signed-in user info.
+  var user = result.user;
+  console.log(user)
 }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    console.log("error code: " + errorCode)
-    console.log("error message: " + errorMessage)
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  console.log("error code: " + errorCode)
+  console.log("error message: " + errorMessage)
 
-    // ...
+  // ...
 });
 
 
@@ -74,19 +74,18 @@ firebase.auth().getRedirectResult().then(function(result) {
 // });
 
 $(".loginBtn loginBtn--facebook").on("click", function() {
-    firebase.auth().signInWithRedirect(provider);
-    console.log("login-worked!-B")
-
+  firebase.auth().signInWithRedirect(provider);
+  console.log("login-worked!-B")
 
 
 });
 
 $("#logout").on("click", function() {
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-    }).catch(function(error) {
-        // An error happened.
-    })
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  })
 });
 
 //write display name to chatbox
