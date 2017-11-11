@@ -201,7 +201,7 @@ firebase.auth().signOut().then(function() {
 });
 
 //log on and log off button on click events
-$("#logOffFacebook").hide();
+//$("#logOffFacebook").hide();
 
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
