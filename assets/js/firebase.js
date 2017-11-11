@@ -210,17 +210,13 @@ $("#facebookBtn").on("click", function() {
 
 });
 
-<<<<<<< HEAD
 $("#logout").on("click", function() {
   $("#logOffFacebook").hide();
   $("#facebookBtn").show();
-=======
-$("#logOffFacebook").on("click", function() {
->>>>>>> cba25ffe82f61bbe459989832a895516f2876fa5
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
-    console.log("signed out of FB")
+    console.log("signed out of FB");
   }).catch(function(error) {
     // An error happened.
-  })
+  });
 });
