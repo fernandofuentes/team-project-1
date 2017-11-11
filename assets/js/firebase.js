@@ -57,7 +57,7 @@ $("tbody").on("click", function(event) {
 
   //if its true it can not be cliked again
 
-  foo(false)
+  foo(false);
 });
 
 function foo(isCorrect) {
@@ -147,18 +147,18 @@ chatData.orderByChild("time").on("child_added", function(snapshot) {
 var loginData = database.ref("/login");
 
 var provider = new firebase.auth.FacebookAuthProvider();
-var displayName = ""
+var displayName = "";
 
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
     // ...
-    console.log(result)
-    displayName = result.user.displayName
+    console.log(result);
+    displayName = result.user.displayName;
 
-    console.log(displayName)
-    console.log("connected to Facebook")
+    console.log(displayName);
+    console.log("connected to Facebook");
     //$("#displayNameTest").append(displayName)
 
     var loginObj = {
@@ -174,7 +174,7 @@ firebase.auth().getRedirectResult().then(function(result) {
   }
   // The signed-in user info.
   var user = result.user;
-  console.log(user)
+  console.log(user);
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -183,8 +183,8 @@ firebase.auth().getRedirectResult().then(function(result) {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
-  console.log("error code: " + errorCode)
-  console.log("error message: " + errorMessage)
+  console.log("error code: " + errorCode);
+  console.log("error message: " + errorMessage);
 
   // ...
 });
@@ -199,7 +199,7 @@ firebase.auth().getRedirectResult().then(function(result) {
 
 $("facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
-  console.log("login-worked!-B")
+  console.log("login-worked!-B");
 
 
 
@@ -210,7 +210,7 @@ $("#logout").on("click", function() {
     // Sign-out successful.
   }).catch(function(error) {
     // An error happened.
-  })
+  });
 });
 
 //write display name to chatbox
