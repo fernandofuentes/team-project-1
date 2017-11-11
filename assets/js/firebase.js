@@ -202,16 +202,15 @@ firebase.auth().signOut().then(function() {
 });
 
 $("#facebookBtn").on("click", function() {
-  $("#facebookBtn").hide();
   $("#logOffFacebook").show();
   firebase.auth().signInWithRedirect(provider);
+  $("#facebookBtn").hide();
 
 
 
 });
 
 $("#logOffFacebook").on("click", function() {
-  $("#logOffFacebook").hide();
   $("#facebookBtn").show();
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
@@ -219,4 +218,6 @@ $("#logOffFacebook").on("click", function() {
   }).catch(function(error) {
     // An error happened.
   });
+  $("#logOffFacebook").hide();
+
 });
