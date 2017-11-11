@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 7");
+console.log("firebase.js loaded 8");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -211,6 +211,7 @@ $("#facebookBtn").on("click", function() {
 $("#logOffFacebook").on("click", function() {
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
+    console.log("signed out of FB")
   }).catch(function(error) {
     // An error happened.
   })
