@@ -1,4 +1,4 @@
-console.log("firebase.js loaded 8");
+console.log("firebase.js loaded 1");
 
 // Initialize Firebase
 // Initialize Firebase
@@ -204,17 +204,16 @@ firebase.auth().signOut().then(function() {
 $("#logOffFacebook").hide();
 
 $("#facebookBtn").on("click", function() {
-  $("#logOffFacebook").show();
   firebase.auth().signInWithRedirect(provider);
   $("#facebookBtn").hide();
-
-
+  $("#logOffFacebook").show();
 
 });
 
 $("#logOffFacebook").on("click", function() {
-  $("#facebookBtn").show();
   firebase.auth().signOut().then(function() {
+    $("#facebookBtn").show();
+
     // Sign-out successful.
     console.log("signed out of FB");
   }).catch(function(error) {
