@@ -1,22 +1,10 @@
-table {
-  margin: 0 auto;
-  border: 5px solid #0069D9;
-  padding: 5px;
-  text-align: center;
-  background: #553C67;
-  color: white;
-}
+/******************************************************************/
 
-td {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  color: #0069D9;
-  border-color: black;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
-}
+/******************************************************************/
+
+/******************************************************************/
+
+/******* GLOBAL *******/
 
 body {
   font-family: 'Bangers', cursive;
@@ -34,33 +22,53 @@ h1 {
   font-weight: 600;
 }
 
-.gameButton {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  color: #0069D9;
-  border-color: black;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
+/******************************************************************/
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******* TITLE *******/
+
+.titleRow {
+  margin: 25px 0;
 }
 
-.gameButton:hover {
+/******************************************************************/
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******* START BUTTON *******/
+
+.startBtnRow {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#startBtn {
+  border: 2px solid white;
+  font-size: 50px;
+  height: auto;
+  width: 200px;
+  font-family: 'Bangers', cursive;
   background-color: #0069D9;
   color: white;
+  border-radius: 0.6em;
+  text-align: center;
 }
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******* FACEBOOK LOGIN *******/
 
 .row.facebook-login-row {
   text-align: center;
-}
-
-.scores {
-  text-align: center;
-  border: 5px solid #F4C500;
-  color: #F4C500;
-  font-size: 25px;
-  border-radius: 20px;
-  font-family: 'Bangers', cursive;
 }
 
 .loginBtn {
@@ -111,85 +119,71 @@ h1 {
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
 
-.startBtnRow {
-  text-align: center;
-}
+/******************************************************************/
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******* NAME AND SCORES *******/
 
 .scoreRow {
   text-align: center;
 }
 
+.scores {
+  text-align: center;
+  border: 5px solid #F4C500;
+  color: #F4C500;
+  font-size: 25px;
+  border-radius: 20px;
+  font-family: 'Bangers', cursive;
+}
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******************************************************************/
+
+/******* GAME BOARD *******/
+
 .gameRow {
   text-align: center;
 }
 
-#startBtn {
-  border: 2px solid white;
-  font-size: 50px;
-  height: auto;
-  width: 200px;
+table {
+  margin: 0 auto;
+  border: 5px solid #0069D9;
+  padding: 5px;
+  text-align: center;
+  background: #553C67;
+  color: white;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
   font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+}
+
+.gameButton {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: #0069D9;
+  border-color: black;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  border: 2px solid #0069D9;
+}
+
+.gameButton:hover {
   background-color: #0069D9;
   color: white;
-  border-radius: 0.6em;
-  text-align: center;
-
-}
-#chat-box {
-  padding: 7px;
-  font-family: 'Delius', cursive;
-  height: 300px;
-  border: 3px solid #0069D9;
-  background-color: white;
-  border-width: thick;
-  color: #0069D9;
-  overflow: auto;
-}
-
-#message-form {
-  display: none;
-}
-
-#name-input {
-  width: 150px;
-  height: 45px;
-  border: 2px solid #0069D9;
-  background-color: white;
-  color: #0069D9;
-  font-size: 25px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
-}
-
-#name-submit {
-  width: 150px;
-  height: 45px;
-  background-color: white;
-  color: #0069D9;
-  border-color: black;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
-}
-
-#message-submit {
-  width: 150px;
-  height: 45px;
-  background-color: white;
-  color: #0069D9;
-  border-color: black;
-  font-size: 30px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
-}
-
-#message-input {
-  width: 150px;
-  height: 45px;
-  border: 2px solid #0069D9;
-  background-color: white;
-  color: #0069D9;
-  font-size: 25px;
-  font-family: 'Bangers', cursive;
-  border: 2px solid #0069D9;
 }
