@@ -52,8 +52,7 @@ body {
   background-color: #000000;
   color: white;
   background-image: url("../images/game.jpg");
-  background-position: center;
-  background-size: cover;
+  background-size: cover!important;
 }
 
 h1 {
