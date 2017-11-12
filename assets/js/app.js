@@ -122,6 +122,12 @@ $.ajax({
     questionDiv.html(response.results["0"].question);
     $(".question").html(question);
 
+    // In the on click of the .gameButton we get the point value using its data-points
+    // attribute. data-points will be a string so I parse it into an integer.
+    pointValue = parseInt($(this).attr("data-points"));
+
+    // I can verify my points value and make sure its of type number (integer).
+    console.log("pointValue:", pointValue, "typeof:", typeof pointValue);
 
     // Display Answers
     var options = [
@@ -168,23 +174,19 @@ $(document).on("click", "li.answers", function() {
   var usersGuess = $(this).text();
   var correctAnswer = results["0"].correct_answer;
 
-  if (usersGuess == correctAnswer) {
+  if (usersGuess === correctAnswer) {
     alert("correct!");
 
-    //get point value from Button (this dont work)
-    //pointValue = $(this).val();
     console.log("point value: " + pointValue);
     playerScore = playerScore + pointValue;
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
 
-    //assign to var
     $("#playerScore").html(playerScore);
   } else {
-    alert("incorrect!");
-    console.log("point value: " + pointValue);
-    playerScore = playerScore - pointValue;
+    alert("wrong!");
+    //playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
