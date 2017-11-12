@@ -1,3 +1,7 @@
+function reset() {
+  playerScore = 0;
+}
+
 // This hides The Game until the Start Button is Clicked On
 $("#gameGrid").hide();
 
