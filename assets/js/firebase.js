@@ -96,6 +96,8 @@ $("#logOffFacebook").on("click", function() {
 
     scoreData.push(scoreObj);
 
+    //reset score to 0
+    reset();
 
     $("#player1").html("Player Name");
     $("#facebookBtn").show();
