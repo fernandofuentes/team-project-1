@@ -151,7 +151,7 @@ $.ajax({
 
     // Display the choices
     document.getElementById("choices-div").appendChild(makeUL(arr));
-    $(".gameButton").prop("onclick", null).off("click");
+    // $(".gameButton").prop("onclick", null).off("click");
   });
 });
 
