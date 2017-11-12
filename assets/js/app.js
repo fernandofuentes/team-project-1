@@ -152,7 +152,14 @@ $.ajax({
     // Display the choices
     document.getElementById("choices-div").appendChild(makeUL(arr));
     // $(".gameButton").prop("onclick", null).off("click");
+
+
   });
+});
+
+
+$(".gamebutton").on("click", function() {
+  $(this).prop("onclick", null).off("click");
 });
 
 $(document).on("click", "li.answers", function() {
