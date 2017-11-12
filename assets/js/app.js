@@ -160,6 +160,7 @@ $.ajax({
 //makes button inactive upon clicking
 $('.gameButton').click(function() {
   $(this).prop('disabled', true);
+  $(this).css("background-color", "#999999");
 });
 
 $(document).on("click", "li.answers", function() {
