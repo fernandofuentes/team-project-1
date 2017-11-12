@@ -152,8 +152,6 @@ $.ajax({
     // Display the choices
     document.getElementById("choices-div").appendChild(makeUL(arr));
     // $(".gameButton").prop("onclick", null).off("click");
-
-
   });
 });
 
@@ -161,10 +159,12 @@ $.ajax({
 $('.gameButton').click(function() {
   $(this).prop('disabled', true);
   $(this).css("background-color", "#999999");
+  $(this).css("color", "#ffffff");
+  $(this).css("font-size", "50%");
 });
 
-$(document).on("click", "li.answers", function() {
 
+$(document).on("click", "li.answers", function() {
   var usersGuess = $(this).text();
   var correctAnswer = results["0"].correct_answer;
 
@@ -179,7 +179,6 @@ $(document).on("click", "li.answers", function() {
     $("#question").empty();
     $("#gameGrid").show();
 
-
     //assign to var
     $("#playerScore").html(playerScore);
   } else {
@@ -189,8 +188,6 @@ $(document).on("click", "li.answers", function() {
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
-
-
   }
 });
 
