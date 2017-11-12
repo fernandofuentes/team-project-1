@@ -8,7 +8,8 @@ $("#startBtn").on("click", function() {
 });
 
 var numberOfQuestions = 30;
-var currentScore = "";
+var player1Score = 0;
+var player2Score = 0;
 
 // The Function that renders the Question with Answer Choices
 var question = $(this).attr("data-name");
@@ -38,59 +39,46 @@ $.ajax({
 
   var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
   // console.log(incorrectAnswer3)
-});
-// var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
-// console.log(choicesOrder)
 
-/////////////////////////////////////////////// RANDOM SHUFFLE
+  // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+  // console.log(choicesOrder)
 
-function shuffle(array) {
-  var currentIndex = array.length,
-    temporaryValue, randomIndex;
+  /////////////////////////////////////////////// RANDOM SHUFFLE
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+  function shuffle(array) {
+    var currentIndex = array.length,
+      temporaryValue, randomIndex;
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 
-  return array;
-}
+  // Used like so
+  var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
+  arr = shuffle(choices);
+  // console.log(choices);
 
-// Used like so
-var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
-arr = shuffle(choices);
-// console.log(choices);
+  /////////////////////////////////////////////// END RANDOM SHUFFLE
 
-/////////////////////////////////////////////// END RANDOM SHUFFLE
-
-// Display Question and Choices on Click
-$(".gameButton").click(function() {
-  $(this).hide();
-  $(".gameRow").hide();
-  var questionDiv = $("<div>");
-  questionDiv.addClass("question");
-  questionDiv.html(response.results["0"].question);
-  $(".question").html(question);
-
-
-  //Brandon's Testing here
-  $(document).on("click", "li.answers", function() {
-
-    var usersGuess = $(this).text();
-
-    if (usersGuess == correctAnswer) {
-      alert("you are correct");
-    }
-    //end of Brandon's Testing
-
+  // Display Question and Choices on Click
+  $(".gameButton").click(function() {
+    $("#chat-and-game").hide();
+    var questionDiv = $("<div>");
+    questionDiv.addClass("question");
+    questionDiv.html(response.results["0"].question);
+    $(".question").html(question);
 
     // Display Answers
     var options = [
@@ -110,10 +98,6 @@ $(".gameButton").click(function() {
 
         // Add it to the list:
         list.appendChild(item);
-
-        //Brandon's Testing there
-        $("li").addClass("answer");
-        //End Brandon's Testing
       }
 
       // Finally, return the constructed list:
