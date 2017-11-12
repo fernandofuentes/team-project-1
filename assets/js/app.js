@@ -157,9 +157,9 @@ $.ajax({
   });
 });
 
-
-$(".gamebutton").on("click", function() {
-  $(this).prop("onclick", null).off("click");
+//makes button inactive upon clicking
+$('.gameButton').click(function() {
+  $(this).prop('disabled', true);
 });
 
 $(document).on("click", "li.answers", function() {
