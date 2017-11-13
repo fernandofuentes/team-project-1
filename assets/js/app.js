@@ -190,7 +190,9 @@ $(document).on("click", "li.answers", function() {
     $("#playerScore").html(playerScore);
   } else {
     alert("wrong!");
-    //playerScore = playerScore - pointValue;
+
+    console.log("point value: " - pointValue);
+    playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
