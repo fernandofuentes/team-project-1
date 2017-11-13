@@ -62,7 +62,7 @@ $.ajax({
 }).done(function(response) {
 
   results = response.results;
-  // console.log(results);
+  console.log(results);
 
   // Storing the question data
   question = response.results["0"].question;
@@ -186,7 +186,6 @@ $(document).on("click", "li.answers", function() {
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
-
     $("#playerScore").html(playerScore);
   } else {
     alert("wrong!");
@@ -196,6 +195,7 @@ $(document).on("click", "li.answers", function() {
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
+    $("#playerScore").html(playerScore);
   }
 });
 
