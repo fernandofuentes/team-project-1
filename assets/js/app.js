@@ -168,9 +168,9 @@ $.ajax({
 //makes button inactive upon clicking
 $('.gameButton').click(function() {
   $(this).prop('disabled', true);
-  $(this).css("background-color", "#999999");
-  $(this).css("color", "#ffffff");
-  $(this).css("font-size", "50%");
+  $(this).css("background-color", "#0069D9");
+  $(this).css("border-color", "white")
+  $(this).text("");
 });
 
 
