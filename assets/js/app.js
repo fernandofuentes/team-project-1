@@ -1,15 +1,55 @@
+function reset() {
+  playerScore = 0;
+}
+
 // This hides The Game until the Start Button is Clicked On
-$(".gameRow").hide();
+$("#gameGrid").hide();
 
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
-  $(".gameRow").show();
+  $("#gameGrid").show();
   $("#startBtn").hide();
 });
 
 var numberOfQuestions = 30;
-var player1Score = 0;
-var player2Score = 0;
+
+var results = "";
+var question = "";
+var correctAnswer = "";
+var incorrectAnswer1 = "";
+var incorrectAnswer2 = "";
+var incorrectAnswer3 = "";
+
+var playerScore = 0;
+
+var pointValue = "";
+
+
+if ($("this").hasClass("one")) {
+  pointValue = 100;
+}
+
+if ($(":button").hasClass('two')) {
+  pointValue = 200;
+}
+
+if ($(":button").hasClass('three')) {
+  pointValue = 300;
+}
+
+if ($(":button").hasClass('four')) {
+  pointValue = 400;
+}
+
+if ($(":button").hasClass('five')) {
+  pointValue = 500;
+}
+
+if ($(":button").hasClass('six')) {
+  pointValue = 600;
+}
+
+
 
 // The Function that renders the Question with Answer Choices
 var question = $(this).attr("data-name");
@@ -21,26 +61,26 @@ $.ajax({
   method: "GET"
 }).done(function(response) {
 
-  var results = response.results;
+  results = response.results;
   // console.log(results);
 
   // Storing the question data
-  var question = response.results["0"].question;
+  question = response.results["0"].question;
   // console.log(question);
 
-  var correctAnswer = response.results["0"].correct_answer;
+  correctAnswer = response.results["0"].correct_answer;
   // console.log(correctAnswer)
 
-  var incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
+  incorrectAnswer1 = response.results["0"].incorrect_answers["0"];
   // console.log(incorrectAnswer1)
 
-  var incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
+  incorrectAnswer2 = response.results["0"].incorrect_answers["1"];
   // console.log(incorrectAnswer2)
 
-  var incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
+  incorrectAnswer3 = response.results["0"].incorrect_answers["2"];
   // console.log(incorrectAnswer3)
 
-  // var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3]
+  var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
   // console.log(choicesOrder)
 
   /////////////////////////////////////////////// RANDOM SHUFFLE
@@ -68,18 +108,30 @@ $.ajax({
   // Used like so
   var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
   arr = shuffle(choices);
-  // console.log(choices);
+  //console.log(arr);
 
   /////////////////////////////////////////////// END RANDOM SHUFFLE
 
   // Display Question and Choices on Click
+
+  // var gamePlay = function() {
+  //     // Some code
+  // };
+
+
   $(".gameButton").click(function() {
-    $(this).hide();
-    $(".gameRow").hide();
+    $("#gameGrid").hide();
     var questionDiv = $("<div>");
     questionDiv.addClass("question");
     questionDiv.html(response.results["0"].question);
     $(".question").html(question);
+
+    // In the on click of the .gameButton we get the point value using its data-points
+    // attribute. data-points will be a string so I parse it into an integer.
+    pointValue = parseInt($(this).attr("data-points"));
+
+    // I can verify my points value and make sure its of type number (integer).
+    console.log("pointValue:", pointValue, "typeof:", typeof pointValue);
 
     // Display Answers
     var options = [
@@ -96,6 +148,8 @@ $.ajax({
 
         // Set its contents:
         item.appendChild(document.createTextNode(array[i]));
+        $(item).addClass("answers");
+        $(item).val($(item).val() + pointValue);
 
         // Add it to the list:
         list.appendChild(item);
@@ -106,7 +160,41 @@ $.ajax({
     }
 
     // Display the choices
-    document.getElementById("choices-div").appendChild(makeUL(options[0]));
-    $(".gameButton").prop("onclick", null).off("click");
+    document.getElementById("choices-div").appendChild(makeUL(arr));
+    // $(".gameButton").prop("onclick", null).off("click");
   });
 });
+
+//makes button inactive upon clicking
+$('.gameButton').click(function() {
+  $(this).prop('disabled', true);
+  $(this).css("background-color", "#999999");
+  $(this).css("color", "#ffffff");
+  $(this).css("font-size", "50%");
+});
+
+
+$(document).on("click", "li.answers", function() {
+  var usersGuess = $(this).text();
+  var correctAnswer = results["0"].correct_answer;
+
+  if (usersGuess === correctAnswer) {
+    alert("correct!");
+
+    console.log("point value: " + pointValue);
+    playerScore = playerScore + pointValue;
+    $("#choices-div").empty();
+    $("#question").empty();
+    $("#gameGrid").show();
+
+    $("#playerScore").html(playerScore);
+  } else {
+    alert("wrong!");
+    //playerScore = playerScore - pointValue;
+    $("#choices-div").empty();
+    $("#question").empty();
+    $("#gameGrid").show();
+  }
+});
+
+// scoring logic
