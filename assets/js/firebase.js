@@ -16,15 +16,6 @@ var database = firebase.database();
 
 //high scores
 // Initialize Firebase
-var config = {
-  apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
-  authDomain: "chat-test-56e7c.firebaseapp.com",
-  databaseURL: "https://chat-test-56e7c.firebaseio.com",
-  projectId: "chat-test-56e7c",
-  storageBucket: "chat-test-56e7c.appspot.com",
-  messagingSenderId: "1003382859041"
-};
-firebase.initializeApp(config);
 
 database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
 
