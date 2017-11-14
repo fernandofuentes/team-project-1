@@ -55,14 +55,14 @@ if ($(":button").hasClass('six')) {
 var question = $(this).attr("data-name");
 var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
-// Creating an AJAX call for the specific movie button being clicked
+// Creating an AJAX call for the specific game baord button being clicked
 $.ajax({
   url: queryURL,
   method: "GET"
 }).done(function(response) {
 
   results = response.results;
-  console.log(results);
+  // console.log(results);
 
   // Storing the question data
   question = response.results["0"].question;
