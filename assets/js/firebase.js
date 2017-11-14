@@ -1,4 +1,4 @@
-console.log("firebase.js loaded");
+console.log("firebase.js loaded - questions fixed");
 
 // Initialize Firebase
 var config = {
@@ -96,7 +96,7 @@ $("#logOffFacebook").on("click", function() {
 
     scoreData.push(scoreObj);
 
-    //reset score to 0
+    //reset score to 0 after being pushed to firebase
     reset();
 
     $("#player1").html("Player Name");
