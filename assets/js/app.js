@@ -1,15 +1,18 @@
-function reset() {
-  playerScore = 0;
-}
+
 
 // This hides The Game until the Start Button is Clicked On
-$("#gameGrid").hide();
+// $("#gameGrid").hide();
 
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
-  $("#gameGrid").show();
-  $("#startBtn").hide();
+  // $("#gameGrid").show();
+  // $("#startBtn").hide();
+  resetGame();
 });
+$("#resetBtn").on("click", function() {
+  resetGame();
+});
+
 
 var numberOfQuestions = 30;
 
@@ -38,7 +41,7 @@ function getQuestion() {
   }).done(function(response) {
 
     results = response.results;
-    // console.log(results);
+     console.log(results);
 
     // Storing the question data
     question = response.results["0"].question;
@@ -98,7 +101,7 @@ $(document).on("click", "li.answers", function() {
   } else {
     alert("wrong!");
 
-    console.log("point value: " - pointValue);
+    console.log("point value: -" + pointValue);
     playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
@@ -106,6 +109,8 @@ $(document).on("click", "li.answers", function() {
     $("#playerScore").html(playerScore);
   }
 });
+
+
 
 
 function shuffle(array) {
@@ -128,7 +133,7 @@ function shuffle(array) {
 }
 
 
-$(".gameButton").click(function() {
+$("#gameGrid").on("click", ".gameButton", function() {
 
   // **** THIS MERGED FROM OTHER .click *********
   $(this).prop('disabled', true);
@@ -176,4 +181,9 @@ function makeUL(array) {
 
   // Finally, return the constructed list:
   return list;
+}
+
+function resetGame(){
+  $("#gameGrid").html('<tr><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td></tr><tr><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td></tr><tr><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td></tr><tr><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td></tr><tr><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td></tr><tr><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td></tr>')
+  playerScore = 0;
 }
