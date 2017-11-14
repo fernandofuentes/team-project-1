@@ -13,6 +13,34 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+
+//high scores
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
+  authDomain: "chat-test-56e7c.firebaseapp.com",
+  databaseURL: "https://chat-test-56e7c.firebaseio.com",
+  projectId: "chat-test-56e7c",
+  storageBucket: "chat-test-56e7c.appspot.com",
+  messagingSenderId: "1003382859041"
+};
+firebase.initializeApp(config);
+
+database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
+
+
+  var arr = Object.keys(snapshot.val());
+  var highScore = snapshot.val()[arr[0]].high_score;
+  console.log("highScore:", highScore);
+
+  $("#highestScore").html(highScore);
+
+
+
+});
+
+
+
 //begin database js File
 var loginData = database.ref("/login");
 var scoreData = database.ref("/scores");
@@ -32,22 +60,16 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = result.user.displayName;
     $("#player1").html(displayName);
 
+    //order result by value to get highest score
+
+
+
     highestScore = result.scores.high_score;
     $("#highestScore").html(highestScore);
 
     console.log(displayName);
+    console.log(highestScore);
     console.log("connected to Facebook");
-
-
-    var loginObj = {
-      name: displayName,
-      time: firebase.database.ServerValue.TIMESTAMP
-
-    };
-
-    console.log(loginObj);
-
-    loginData.push(loginObj);
 
   }
   // The signed-in user info.
@@ -80,6 +102,15 @@ $("#facebookBtn").on("click", function() {
   $("#facebookBtn").hide();
   $("#logOffFacebook").show();
 
+  var loginObj = {
+    name: displayName,
+    time: firebase.database.ServerValue.TIMESTAMP
+
+  };
+
+  console.log(loginObj);
+
+  loginData.push(loginObj);
 });
 
 $("#logOffFacebook").on("click", function() {
