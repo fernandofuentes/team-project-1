@@ -1,4 +1,4 @@
-console.log("firebase.js loaded");
+console.log("firebase.js loaded - questions fixed");
 
 // Initialize Firebase
 var config = {
@@ -36,11 +36,11 @@ $.ajax({
   url: easyURL,
   method: "GET"
 })
-// performing our GET request
-$.ajax({
-url: queryURL,
-method: "GET"
-})
+// // performing our GET request
+// $.ajax({
+// url: queryURL,
+// method: "GET"
+// })
 
 // after the data request
 .done(function(response) {
@@ -180,7 +180,7 @@ $("#logOffFacebook").on("click", function() {
 
     scoreData.push(scoreObj);
 
-    //reset score to 0
+    //reset score to 0 after being pushed to firebase
     reset();
 
     $("#player1").html("Player Name");
