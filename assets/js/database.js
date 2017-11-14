@@ -35,25 +35,21 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 
 
 
-<<<<<<< HEAD
    // performing our GET request
       $.ajax({
           url: easyURL,
           method: "GET"
         })
-=======
   // performing our GET request
   $.ajax({
     url: queryURL,
     method: "GET"
   })
->>>>>>> upstream/master
 
   // after the data request
   .done(function(response) {
     console.log(response);
 
-<<<<<<< HEAD
           //storing the array of results in the variable
           var results = response.results;
           console.log("easy"+JSON.stringify(results));
@@ -369,7 +365,6 @@ var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&
 //         playerNum = 1;
 //       }
 
-=======
     //storing the array of results in the variable
     var results = response.data;
     console.log(results);
@@ -400,7 +395,6 @@ function foo(isCorrect) {
 
 //DATA ATTRIBUTE OR CLASS FOR HTML BUTTONS
 //EASY/NORMAL/ HARD
->>>>>>> upstream/master
 
 
 
@@ -456,11 +450,8 @@ function foo(isCorrect) {
 
 
 
-<<<<<<< HEAD
 // // // //info to store in firebase
-=======
 // display
->>>>>>> upstream/master
 
 // // // values of jeopardy grid
 
@@ -468,7 +459,6 @@ function foo(isCorrect) {
 
 // // // display 
 
-<<<<<<< HEAD
 // // // be able to add to a player score with a correct anwser.
 
 // // // be able to subtract from a player's score with an incorrect anwser.
@@ -477,6 +467,4 @@ function foo(isCorrect) {
 
 // // // eliminating values from grid as they are being anwsered.
 //   }
-=======
 // eliminating values from grid as they are being anwsered.
->>>>>>> upstream/master
