@@ -42,6 +42,90 @@ var provider = new firebase.auth.FacebookAuthProvider();
 var displayName = "";
 var highestScore = "";
 
+//api links
+var easyURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple"
+
+var mediumURL = "https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple";
+
+var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple";
+
+
+// performing our GET request
+$.ajax({
+  url: easyURL,
+  method: "GET"
+})
+// // performing our GET request
+// $.ajax({
+// url: queryURL,
+// method: "GET"
+// })
+
+// after the data request
+.done(function(response) {
+console.log(response);
+
+  //storing the array of results in the variable
+  var results = response.results;
+  console.log("easy"+JSON.stringify(results));
+
+  for (var i = 0; i < results.length; i++){
+    console.log(results[i].question);
+var easy = $("button")
+easy.attr("data-question", results[i].question)
+
+    console.log(results[i].correct_answer);
+
+  }
+});
+
+  $.ajax({
+    url: mediumURL,
+    method: "GET"
+  })
+
+// after the data request
+  .done(function(response) {
+    console.log(response);
+
+    //storing the array of results in the variable
+    var results = response.results;
+    console.log("medium"+JSON.stringify(results));
+
+    for (var i = 0; i < results.length; i++){
+      console.log(results[i].question);
+ var medium = $("button")
+ medium.attr("data-question", results[i].question)
+
+ console.log(results[i].correct_answer);
+
+    }
+  });
+
+  $.ajax({
+    url: hardURL,
+    method: "GET"
+  })
+
+// after the data request
+  .done(function(response) {
+    console.log(response);
+
+    //storing the array of results in the variable
+    var results = response.results;
+    console.log("hard"+JSON.stringify(results));
+
+    for (var i = 0; i < results.length; i++){
+      console.log(results[i].question);
+ var hard = $("button")
+ hard.attr("data-question", results[i].question)
+
+ console.log(results[i].correct_answer);
+
+    }
+  });
+
+
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
