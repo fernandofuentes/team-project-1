@@ -55,7 +55,7 @@ if ($(":button").hasClass('six')) {
 var question = $(this).attr("data-name");
 var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
-// Creating an AJAX call for the specific movie button being clicked
+// Creating an AJAX call for the specific game baord button being clicked
 $.ajax({
   url: queryURL,
   method: "GET"
@@ -168,9 +168,9 @@ $.ajax({
 //makes button inactive upon clicking
 $('.gameButton').click(function() {
   $(this).prop('disabled', true);
-  $(this).css("background-color", "#999999");
-  $(this).css("color", "#ffffff");
-  $(this).css("font-size", "50%");
+  $(this).css("background-color", "#0069D9");
+  $(this).css("border-color", "white")
+  $(this).text("");
 });
 
 
@@ -186,14 +186,16 @@ $(document).on("click", "li.answers", function() {
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
-
     $("#playerScore").html(playerScore);
   } else {
     alert("wrong!");
-    //playerScore = playerScore - pointValue;
+
+    console.log("point value: " - pointValue);
+    playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
     $("#gameGrid").show();
+    $("#playerScore").html(playerScore);
   }
 });
 
