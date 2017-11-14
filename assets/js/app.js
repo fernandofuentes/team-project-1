@@ -199,4 +199,8 @@ $(document).on("click", "li.answers", function() {
   }
 });
 
+resetGame();
 // scoring logic
+if (gameGrid === "0")
+    reset();
+    console.log("firebase.js loaded");

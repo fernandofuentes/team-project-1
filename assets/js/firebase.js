@@ -52,8 +52,8 @@ console.log(response);
 
   for (var i = 0; i < results.length; i++){
     console.log(results[i].question);
-var button = $("button")
-button.attr("data-question", results[i].question)
+var easy = $("button")
+easy.attr("data-question", results[i].question)
 
     console.log(results[i].correct_answer);
 
@@ -75,8 +75,8 @@ button.attr("data-question", results[i].question)
 
     for (var i = 0; i < results.length; i++){
       console.log(results[i].question);
- var button = $("button")
- button.attr("data-question", results[i].question)
+ var medium = $("button")
+ medium.attr("data-question", results[i].question)
 
  console.log(results[i].correct_answer);
 
@@ -98,8 +98,8 @@ button.attr("data-question", results[i].question)
 
     for (var i = 0; i < results.length; i++){
       console.log(results[i].question);
- var button = $("button")
- button.attr("data-question", results[i].question)
+ var hard = $("button")
+ hard.attr("data-question", results[i].question)
 
  console.log(results[i].correct_answer);
 
