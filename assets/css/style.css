@@ -68,6 +68,26 @@ h1 {
   color: #0069D9;
 }
 
+#resetBtn {
+  border: 2px solid white;
+  font-size: 35px;
+  height: auto;
+  width: 140px;
+  padding: 10px;
+  font-family: 'Bangers', cursive;
+  background-color: #0069D9;
+  color: white;
+  border-radius: 0.6em;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 20px;
+}
+
+#resetBtn:hover {
+  background-color: #EDC643;
+  color: #0069D9;
+}
+
 /******************************************************************/
 
 /******************************************************************/
