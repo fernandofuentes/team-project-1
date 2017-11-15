@@ -6,9 +6,11 @@ $("#startBtn").on("click", function() {
   // $("#gameGrid").show();
   // $("#startBtn").hide();
   resetGame();
+  playerScore = 0;
 });
 $("#resetBtn").on("click", function() {
   resetGame();
+  playerScore = 0;
 });
 
 
