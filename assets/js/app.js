@@ -84,7 +84,7 @@ function getQuestion() {
 
 
 $(document).on("click", "li.answers", function() {
-  var usersGuess = $(this).text();
+  var usersGuess = $(this).html();
   var correctAnswer = results["0"].correct_answer;
 
   if (usersGuess === correctAnswer) {
@@ -138,7 +138,7 @@ function shuffle(array) {
 }
 
 $("#gameGrid").on("click", ".gameButton", function() {
-
+  $(".correctOrWrongText").empty();
   // **** THIS MERGED FROM OTHER .click *********
   $(this).prop('disabled', true);
   $(this).css("background-color", "#0069D9");
@@ -190,4 +190,5 @@ function makeUL(array) {
 function resetGame() {
   $("#gameGrid").html('<tr><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td></tr><tr><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td></tr><tr><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td></tr><tr><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td></tr><tr><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td></tr><tr><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td></tr>')
   playerScore = 0;
+  $(".correctOrWrongText").empty();
 }
