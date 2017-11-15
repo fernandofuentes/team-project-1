@@ -93,7 +93,6 @@ $(document).on("click", "li.answers", function() {
     $(".correctOrWrongText").text("CORRECT!");
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "lime");
-    $(".correctOrWrongText").css("font-size", "30px");
     // alert("correct!");
 
     console.log("point value: " + pointValue);
@@ -106,7 +105,6 @@ $(document).on("click", "li.answers", function() {
     $(".correctOrWrongText").text("WRONG!");
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "red");
-    $(".correctOrWrongText").css("font-size", "30px");
     // alert("wrong!");
 
     console.log("point value: -" + pointValue);
